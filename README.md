@@ -6,7 +6,7 @@ Official Code and Coffee website development
 
 To get Going:
 
-`$cd CodeAndCoffeeFE`
+`$cd client`
 
 `$npm install`
 
