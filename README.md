@@ -14,6 +14,8 @@ To get Going:
 
 Node Version: 18.13
 
+React Version: 18.2
+
 Vite Version: 5.1.3 https://vitejs.dev/
 
 - using Typescript
@@ -38,3 +40,5 @@ PrimeReact Version: 10.5.1 https://primereact.org/
 - Add sass to be able to customize template
 
 TailwindCSS Version: 3.4.1 - https://tailwindcss.com/docs/guides/vite
+
+react-router-dom Version: 6.22.2 - https://www.npmjs.com/package/react-router-dom
