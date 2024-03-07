@@ -3,8 +3,8 @@ import { MenuItem } from 'primereact/menuitem';
 
 const NavBar = () => {
     const itemRenderer = (item: MenuItem) => (
-        <a className="flex align-items-right p-menuitem-link">
-            <span className="mx-2 float-right">{item.label}</span>
+        <a className="flex p-menuitem-link text-white">
+            <span className="mx-2 ">{item.label}</span>
         </a>
     );
 
@@ -47,7 +47,8 @@ const NavBar = () => {
             <Menubar
                 className="bg-PrimaryColor"
                 model={items}
-                start={start} />
+                start={start}
+            />
         </div>
     )
 }
