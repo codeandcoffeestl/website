@@ -42,3 +42,7 @@ PrimeReact Version: 10.5.1 https://primereact.org/
 TailwindCSS Version: 3.4.1 - https://tailwindcss.com/docs/guides/vite
 
 react-router-dom Version: 6.22.2 - https://www.npmjs.com/package/react-router-dom
+
+Font Awesome Version: https://docs.fontawesome.com/
+-icons : @fortawesome/free-brands-svg-icons
+-react : @fortawesome/react-fontawesome

@@ -1,37 +1,90 @@
+import { TieredMenu } from 'primereact/tieredmenu';
+import { MenuItem } from 'primereact/menuitem';
+import { Card } from 'primereact/card';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faLinkedin,
+    faDiscord,
+    faXTwitter
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
+
+    const itemRenderer = (item: MenuItem) => (
+        <a className="flex p-menuitem-link text-white">
+            <span className="mx-2 ">{item.label}</span>
+        </a>
+    );
+
+    const handleClick = (anchor: string) => () => {
+        const id = `${anchor}`;
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    };
+
+    const items: MenuItem[] = [
+        {
+            label: 'About',
+            command: handleClick('about'),
+            template: itemRenderer,
+        },
+        {
+            label: 'Events',
+            command: handleClick('events')
+            ,
+            template: itemRenderer,
+        },
+        {
+            label: 'Contact',
+            command: handleClick('contact'),
+            template: itemRenderer,
+        },
+    ];
+
+    const socials = [
+        {
+            icon: faDiscord,
+            url: "https://discord.com/",
+        },
+        {
+            icon: faLinkedin,
+            url: "https://www.linkedin.com",
+        },
+        {
+            icon: faXTwitter,
+            url: "https://www.x.com",
+        },
+    ];
+
+
+
+
     return (
-        <div className="flex gap-5 justify-between items-start px-px mt-3 w-full max-md:flex-wrap max-md:max-w-full">
-            <div className="flex flex-col self-start text-2xl whitespace-nowrap text-stone-50">
-                <div>About</div> <div className="mt-4">Events</div>{" "}
-                <div className="mt-4">Volunteer</div>{" "}
-                <div className="mt-4">Sponsor</div>{" "}
-                <div className="mt-2.5">Contact</div>{" "}
-                <div className="mt-8 text-base">Terms of Service</div>
-            </div>{" "}
-            <div className="self-end mt-8 max-md:max-w-full">
-                <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
-                    <div className="flex flex-col w-[57%] max-md:ml-0 max-md:w-full">
-                        <div className="flex flex-col items-center text-2xl whitespace-nowrap text-stone-50 max-md:mt-10">
-                            <div>Visit Us</div>{" "}
-                            <img
-                                loading="lazy"
-                                srcSet="..."
-                                className="mt-8 aspect-[4] w-[284px]"
-                            />
-                        </div>
-                    </div>{" "}
-                    <div className="flex flex-col ml-5 w-[43%] max-md:ml-0 max-md:w-full">
-                        <img
-                            loading="lazy"
-                            srcSet="..."
-                            className="grow mt-4 w-full aspect-[1.96] max-md:mt-10"
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>
+        <footer className="bg-PrimaryColor flex">
+            <TieredMenu
+                className="bg-PrimaryColor"
+                model={items}
+            />
+            <Card className="bg-PrimaryColor text-white flex-grow">
+                <h4>Visit Us</h4>
+                <br />
+                {socials.map((social) => (
+                    <a href={social.url}>
+                        <FontAwesomeIcon icon={social.icon} className="fa-2xl fa-fw fa-solid" />
+                    </a>
+                ))}
+            </Card>
+            <Card className="bg-PrimaryColor text-white">
+                <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="100" className="mr-2 grid baseline"></img>
+                <p className='text-xs place-content-baseline'>@2024 Code and Coffee Developers</p>
+            </Card>
+        </footer>
     )
 }
 
-export default Footer
+export default Footer;
