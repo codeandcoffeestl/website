@@ -1,7 +1,10 @@
 import { Menubar } from 'primereact/menubar';
 import { MenuItem } from 'primereact/menuitem';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
+    const navigate = useNavigate();
+
     const itemRenderer = (item: MenuItem) => (
         <a className="flex p-menuitem-link text-white">
             <span className="mx-2 ">{item.label}</span>
@@ -35,10 +38,14 @@ const NavBar = () => {
             label: 'Contact',
             command: handleClick('contact'),
             template: itemRenderer,
+        },
+        {
+            // This is a demo of how to implement navigation when building additional pages
+            label: 'StyleDemo',
+            command: () => navigate('stylesample'),
+            template: itemRenderer,
         }
     ];
-
-
 
     const start = <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" height="40" className="mr-2"></img>;
 
