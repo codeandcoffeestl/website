@@ -2,7 +2,7 @@ import React from 'react'
 
 const EventsC = () => {
     return (
-        <div>EventsC</div>
+        <div id="events" >EventsC</div>
     )
 }
 

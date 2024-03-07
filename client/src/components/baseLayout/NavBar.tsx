@@ -1,55 +1,53 @@
 import { Menubar } from 'primereact/menubar';
+import { MenuItem } from 'primereact/menuitem';
 
 const NavBar = () => {
-    const items = [
+    const itemRenderer = (item: MenuItem) => (
+        <a className="flex align-items-right p-menuitem-link">
+            <span className="mx-2 float-right">{item.label}</span>
+        </a>
+    );
+
+    const handleClick = (anchor: string) => () => {
+        const id = `${anchor}`;
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    };
+
+    const items: MenuItem[] = [
         {
-            label: 'Home',
-            icon: 'pi pi-home'
+            label: 'About',
+            command: handleClick('about'),
+            template: itemRenderer,
         },
         {
-            label: 'Features',
-            icon: 'pi pi-star'
-        },
-        {
-            label: 'Projects',
-            icon: 'pi pi-search',
-            items: [
-                {
-                    label: 'Components',
-                    icon: 'pi pi-bolt'
-                },
-                {
-                    label: 'Blocks',
-                    icon: 'pi pi-server'
-                },
-                {
-                    label: 'UI Kit',
-                    icon: 'pi pi-pencil'
-                },
-                {
-                    label: 'Templates',
-                    icon: 'pi pi-palette',
-                    items: [
-                        {
-                            label: 'Apollo',
-                            icon: 'pi pi-palette'
-                        },
-                        {
-                            label: 'Ultima',
-                            icon: 'pi pi-palette'
-                        }
-                    ]
-                }
-            ]
+            label: 'Events',
+            command: handleClick('events')
+            ,
+            template: itemRenderer,
         },
         {
             label: 'Contact',
-            icon: 'pi pi-envelope'
+            command: handleClick('contact'),
+            template: itemRenderer,
         }
     ];
+
+
+
+    const start = <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" height="40" className="mr-2"></img>;
+
     return (
         <div className="card">
-            <Menubar model={items} />
+            <Menubar
+                className="bg-PrimaryColor"
+                model={items}
+                start={start} />
         </div>
     )
 }
