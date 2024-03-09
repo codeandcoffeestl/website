@@ -49,14 +49,12 @@ const NavBar = () => {
 
 
 
-    const start = <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="100" className="mr-2"></img>;
-
     return (
-        <div className="card">
+        <div className="flex items-center justify-between bg-PrimaryColor pt-2 pb-2 pl-2 ">
+            <a onClick={() => navigate('/')}><img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="100" className="mr-2" /></a>
             <Menubar
                 className="bg-PrimaryColor"
                 model={items}
-                start={start}
             />
         </div>
     )

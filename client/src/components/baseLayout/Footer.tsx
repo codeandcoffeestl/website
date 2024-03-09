@@ -70,7 +70,8 @@ const Footer = () => {
                 className="bg-PrimaryColor"
                 model={items}
             />
-            <Card className="bg-PrimaryColor text-white flex-grow">
+            <div className="bg-PrimaryColor text-white flex-grow">
+                <br />
                 <h4>Visit Us</h4>
                 <br />
                 {socials.map((social) => (
@@ -78,12 +79,15 @@ const Footer = () => {
                         <FontAwesomeIcon icon={social.icon} className="fa-2xl fa-fw fa-solid" />
                     </a>
                 ))}
-            </Card>
-            <Card className="bg-PrimaryColor text-white">
-                <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="100" className="mr-2 grid baseline"></img>
-                <p className='text-xs place-content-baseline'>@2024 Code and Coffee Developers</p>
-            </Card>
-        </footer>
+            </div>
+            <div className="bg-PrimaryColor text-white">
+                <br />
+                <div className="flex flex-col items-end">
+                    <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="100" className="mb-2 mr-4"></img>
+                    <p className='text-xs mr-4'>@2024 Code and Coffee Developers </p>
+                </div>
+            </div>
+        </footer >
     )
 }
 
