@@ -1,6 +1,5 @@
 import { TieredMenu } from 'primereact/tieredmenu';
 import { MenuItem } from 'primereact/menuitem';
-import { Card } from 'primereact/card';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faLinkedin,
