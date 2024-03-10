@@ -2,7 +2,7 @@ import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import { Panel } from 'primereact/panel';
 
-function LandingPage() {
+function StyleSamplePage() {
     const header = (
         <img alt="Card" src="https://primefaces.org/cdn/primereact/images/usercard.png" />
     );
@@ -78,4 +78,4 @@ function LandingPage() {
     )
 }
 
-export default LandingPage;
+export default StyleSamplePage;
