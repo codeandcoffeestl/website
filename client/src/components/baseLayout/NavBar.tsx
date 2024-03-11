@@ -24,23 +24,27 @@ const NavBar = () => {
 
     const items: MenuItem[] = [
         {
+            id: "Nav1",
             label: 'About',
             command: handleClick('about'),
             template: itemRenderer,
         },
         {
+            id: "Nav2",
             label: 'Events',
             command: handleClick('events')
             ,
             template: itemRenderer,
         },
         {
+            id: "Nav3",
             label: 'Contact',
             command: handleClick('contact'),
             template: itemRenderer,
         },
         {
             // This is a demo of how to implement navigation when building additional pages
+            id: "Nav4",
             label: 'StyleDemo',
             command: () => navigate('stylesample'),
             template: itemRenderer,
