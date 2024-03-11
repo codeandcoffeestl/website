@@ -14,16 +14,16 @@ const HeroC = () => {
     };
     return (
         
-        <div className="p-hero">
-            <div className="" >    
+        <div className="p-hero" id="hero">
+            <div className="p-4">
                 <section className="">
-                    <p className="p-hero-header text-6xl">
+                    <p className="p-hero-header lg:text-6xl md:text-5xl sm:text-4xl text-2xl">
                         A Meetup community <br/>
                         for developers to grow <br/>
                         and make friends  - St Louis
                     </p>
                     <br/>
-                    <p className="p-hero-calltoaction text-SecondaryColor">
+                    <p className="p-hero-calltoaction text-SecondaryColor lg:text-4xl md:text-3xl sm:text-2xl text-1xl ">
                         A central hub for digital space in the city
                     </p>
                     <br/>
