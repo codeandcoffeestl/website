@@ -1,6 +1,6 @@
 const OurSponsorsC = () => {
     return (
-        <div>OurSponsorsC</div>
+        <div id="oursponsors">OurSponsorsC</div>
     )
 }
 

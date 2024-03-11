@@ -1,10 +1,9 @@
 .p-hero {
-    min-height: 80vh;
-    background: rgba(0, 0, 0, 0.5) ;
+    position: relative;
+    min-height: 85vh;
+    background: rgba(0, 0, 0, 0.6);
     background-image: $heroBgImage;
-    background-repeat: no-repeat;
     background-size: cover;
-    background-attachment:local;
     border-radius: none;
     background-blend-mode: darken;
     display: flex;
@@ -21,5 +20,9 @@
         font-weight: 700;
         text-align: left;
 
+    }
+    .p-hero-buttons {
+        font-size: 1.2rem;
+        font-weight: bold;
     }
 }
