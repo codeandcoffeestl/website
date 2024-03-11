@@ -49,6 +49,7 @@
     @import './components/data/_timeline';
     
     //Panel
+    @import './components/panel/hero';
     @import './components/panel/_accordion';
     @import './components/panel/_card';
     @import './components/panel/_fieldset';
@@ -102,4 +103,5 @@
     @import './components/misc/_terminal';
     @import './components/misc/_blockui';
     @import './components/misc/_badge';
+
 }
