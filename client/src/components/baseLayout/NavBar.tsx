@@ -6,7 +6,7 @@ const NavBar = () => {
     const navigate = useNavigate();
 
     const itemRenderer = (item: MenuItem) => (
-        <a className="flex p-menuitem-link text-white">
+        <a className="p-menuitem-link text-white bg-PrimaryColor flex items-center ">
             <span className="mx-2 ">{item.label}</span>
         </a>
     );
@@ -48,16 +48,18 @@ const NavBar = () => {
             label: 'StyleDemo',
             command: () => navigate('stylesample'),
             template: itemRenderer,
+
+
         }
     ];
 
 
 
     return (
-        <div className="flex items-center justify-between bg-PrimaryColor pt-2 pb-2 pl-2 ">
+        <div className="flex items-center justify-between bg-PrimaryColor pt-2 pb-2 pl-2 pr-4">
             <a onClick={() => navigate('/')}><img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="100" className="mr-2" /></a>
             <Menubar
-                className="bg-PrimaryColor"
+                className="bg-PrimaryColor text-white"
                 model={items}
             />
         </div>
