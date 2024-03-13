@@ -12,8 +12,8 @@ const HeroC = () => {
             });
         }
     };
+
     return (
-        
         <div className="p-hero" id="hero">
             <div className="p-4">
                 <section className="">
@@ -30,11 +30,11 @@ const HeroC = () => {
                     <br/>
                     <div className="min-w-full flex ">
                     <Button 
-                    className="p-hero-buttons text-xl mr-3 bg-YHighlightColor text-PrimaryColor "
+                    className="p-hero-buttons text-xl mr-3 bg-OHighlightColor text-PrimaryColor "
                     onClick={handleClick('oursponsors')}>
                         Our Sponsors
                     </Button>
-                    <Button className="bg-YHighlightColor text-PrimaryColor font-semibold text-xl">
+                    <Button className="bg-OHighlightColor text-PrimaryColor font-semibold text-xl">
                         Sign Up for Volunterer 
                     </Button>
                     </div>
