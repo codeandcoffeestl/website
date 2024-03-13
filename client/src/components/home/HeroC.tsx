@@ -14,7 +14,7 @@ const HeroC = () => {
     };
 
     return (
-        <div className="p-hero" id="hero">
+        <div className="p-hero " id="hero">
             <div className="p-4">
                 <section className="">
                     <p className="p-hero-header lg:text-6xl md:text-5xl sm:text-4xl text-2xl">
@@ -30,7 +30,7 @@ const HeroC = () => {
                     <br/>
                     <div className="min-w-full flex ">
                     <Button 
-                    className="p-hero-buttons text-xl mr-3 bg-OHighlightColor text-PrimaryColor "
+                    className="p-hero-buttons text-xl mr-3 bg-OHighlightColor text-PrimaryColor font-RockNROll One "
                     onClick={handleClick('oursponsors')}>
                         Our Sponsors
                     </Button>

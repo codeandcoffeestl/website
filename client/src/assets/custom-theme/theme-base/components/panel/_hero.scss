@@ -1,3 +1,4 @@
+
 .p-hero {
     position: relative;
     min-height: 85vh;
@@ -12,7 +13,7 @@
     justify-content: center;
     .p-hero-header {
         color: $primaryTextColor;
-        font-weight: bold;  
+        font-family: 'RocknRoll One';
         text-align: left;
     }
     .p-hero-calltoaction {
