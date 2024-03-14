@@ -1,0 +1,27 @@
+
+.p-hero {
+    position: relative;
+    min-height: 85vh;
+    background: rgba(0, 0, 0, 0.6);
+    background-image: $heroBgImage;
+    background-size: cover;
+    border-radius: none;
+    background-blend-mode: darken;
+    display: flex;
+    flex-flow: column;  
+    align-items: center;
+    justify-content: center;
+    font-family: 'RocknRoll One';
+    .p-hero-header {
+        color: $primaryTextColor;
+        text-align: left;
+    }
+    .p-hero-calltoaction {
+        text-align: left;
+
+    }
+    .p-hero-buttons {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
