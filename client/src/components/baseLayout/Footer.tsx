@@ -28,17 +28,20 @@ const Footer = () => {
 
     const items: MenuItem[] = [
         {
+            id: "Foot1",
             label: 'About',
             command: handleClick('about'),
             template: itemRenderer,
         },
         {
+            id: "Foot2",
             label: 'Events',
             command: handleClick('events')
             ,
             template: itemRenderer,
         },
         {
+            id: "Foot3",
             label: 'Contact',
             command: handleClick('contact'),
             template: itemRenderer,
@@ -47,14 +50,17 @@ const Footer = () => {
 
     const socials = [
         {
+            id: "FootIcon1",
             icon: faDiscord,
             url: "https://discord.com/",
         },
         {
+            id: "FootIcon2",
             icon: faLinkedin,
             url: "https://www.linkedin.com",
         },
         {
+            id: "FootIcon3",
             icon: faXTwitter,
             url: "https://www.x.com",
         },
@@ -73,8 +79,8 @@ const Footer = () => {
                 <br />
                 <h4>Visit Us</h4>
                 <br />
-                {socials.map((social) => (
-                    <a href={social.url}>
+                {socials.map((social, index) => (
+                    <a key={index + "socialIconLink"} href={social.url}>
                         <FontAwesomeIcon icon={social.icon} className="fa-2xl fa-fw fa-solid" />
                     </a>
                 ))}
