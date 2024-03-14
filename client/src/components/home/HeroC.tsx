@@ -17,8 +17,8 @@ const HeroC = () => {
         <div className="p-hero " id="hero">
             <div className="p-4">
                 <section className="">
-                    <p className="p-hero-header lg:text-6xl md:text-5xl sm:text-4xl text-2xl">
-                        A Meetup community <br/>
+                    <p className="p-hero-header lg:text-6xl/[1.5em] md:text-5xl/[1.5em] sm:text-4xl/[1.5em] text-3xl/[1.5em]">
+                        A Meetup community <br/> 
                         for developers to grow <br/>
                         and make friends  - St Louis
                     </p>
