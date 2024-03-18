@@ -39,3 +39,30 @@
 .read-the-docs {
   color: #888;
 }
+
+.form-contact .card-contact {
+  min-width: 450px;
+}
+.form-contact .card-contact .form-contact {
+  margin-top: 2rem;
+}
+.form-contact .card-contact .field-contact {
+  margin-bottom: 1.5rem;
+}
+@media screen and (max-width: 960px) {
+  .form-contact .card-contact {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .form-contact .card-contact {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.border-contact {
+  border: #61dafbaa;
+  border-style: solid;
+  border-width: 1.5incap;
+}

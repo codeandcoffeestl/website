@@ -44,5 +44,8 @@ TailwindCSS Version: 3.4.1 - https://tailwindcss.com/docs/guides/vite
 react-router-dom Version: 6.22.2 - https://www.npmjs.com/package/react-router-dom
 
 Font Awesome Version: https://docs.fontawesome.com/
--icons : @fortawesome/free-brands-svg-icons
--react : @fortawesome/react-fontawesome
+
+- icons Version: 6.5.1 - @fortawesome/free-brands-svg-icons
+- react Version: 0.2.0 - @fortawesome/react-fontawesome
+
+react-hook-form Version: 7.51.1 - https://react-hook-form.com/
