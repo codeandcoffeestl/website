@@ -33,9 +33,17 @@ export default function ContactUsC() {
 
 
 
-    const onSubmit = (data: any) => {
+    const onSubmit = async (data: any) => {
         data && show();
-        console.log(data);
+        const apiUrl = "https://afuftutfoi.execute-api.us-east-1.amazonaws.com/test";
+
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
 
         reset();
     };
