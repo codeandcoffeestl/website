@@ -92,6 +92,13 @@ const PastSpeakersCarouselC = () => {
     return (
 
         <div className="grid grid-cols-5 grid-rows-1 overflow-x-auto bg-WAccentColor py-4">
+              {/* 
+                renders images for carousel.
+                if selected show the image in the middle.
+                else if slide is one before selected slide show on the left.(if slide index is zero show last slide in array on left)
+                else if slide is one after selected slide show on the right.(if slide index is last show first slide in array on right)
+                else hide slide
+             */}
                {slides.map((slide, i) => {
                     return slide.selected ? <Image src={slide.src} imageClassName="aspect-video" className=" z-50 flex col-start-2 row-span-full col-span-3 container justify-center items-center py-0 drop-shadow-2xl select-none" preview alt={slide.alt} key={`key-${i}a`}/> 
                     : (slides[i + 1] === undefined && slides[0].selected) || (slides[i + 1] && slides[i + 1].selected ) ? 
