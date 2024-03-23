@@ -2,6 +2,7 @@ import { Image } from "primereact/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
+import { Button } from "primereact/button"
 const images = [
     {
         src: "https://picsum.photos/seed/img1/600/400",
@@ -92,7 +93,7 @@ const PastSpeakersCarouselC = () => {
 
         <div className="grid grid-cols-5 grid-rows-1 overflow-x-auto bg-WAccentColor py-4">
                {slides.map((slide, i) => {
-                    return slide.selected ? <Image src={slide.src} imageClassName="aspect-video" className=" z-50 flex col-start-2 row-span-full col-span-3 container justify-center  items-center py-0 drop-shadow-2xl select-none" preview alt={slide.alt} key={`key-${i}a`}/> 
+                    return slide.selected ? <Image src={slide.src} imageClassName="aspect-video" className=" z-50 flex col-start-2 row-span-full col-span-3 container justify-center items-center py-0 drop-shadow-2xl select-none" preview alt={slide.alt} key={`key-${i}a`}/> 
                     : (slides[i + 1] === undefined && slides[0].selected) || (slides[i + 1] && slides[i + 1].selected ) ? 
                     <Image src={slide.src} imageClassName="aspect-video" className="flex z-10 col-start-1 container col-span-2 gap-x-0.5 row-span-full justify-center items-center drop-shadow-2xl select-none" alt={slide.alt} key={`key-${i}a`}/> 
                     : (slides[i - 1] === undefined && slides[slides.length - 1].selected) || (slides[i - 1] && slides[i - 1].selected ) ?
@@ -100,13 +101,13 @@ const PastSpeakersCarouselC = () => {
                     : <Image src={slide.src} imageClassName="aspect-video" className="flex z-20 col-start- col-span-3  row-span-full justify-center items-center drop-shadow-2xl hidden select-none" key={`key-${i}a`} />
                 })}
 
-                <div className="place-self-center self-center z-40 col-start-1 col-span-1 row-span-full row-start-1 bg-WAccentColor rounded-full flex items-center justify-center size-10 cursor-pointer drop-shadow-lg" onClick={handleLeftClick}>
-                    <FontAwesomeIcon icon={faChevronLeft} className="z-50 col-start-1 col-span-1 row-span-full place-content-center m-auto text-4xl text-SecondaryColor drop-shadow-lg"/>
-                </div>
+                <Button pt={{root: { style: {borderRadius: '100%'}}}} className="hover:ring-2 hover:ring-SecondaryColor place-self-center self-center z-40 col-start-1 col-span-1 row-span-full row-start-1 bg-WAccentColor rounded-full flex items-center justify-center size-10 cursor-pointer drop-shadow-lg" onClick={handleLeftClick} >
+                    <FontAwesomeIcon icon={faChevronLeft} className="z-50 text-4xl text-SecondaryColor drop-shadow-lg"/>
+                </Button>
                   
-                <div className="place-self-center self-center z-40 col-start-5 row-start-1 col-span-1 row-span-full row-start-1 bg-WAccentColor rounded-full flex items-center justify-center size-10 cursor-pointer drop-shadow-lg" onClick={handleRightClick}>
-                    <FontAwesomeIcon icon={faChevronRight} className="z-50 col-start-1 col-span-1 row-span-full place-content-center m-auto text-4xl text-SecondaryColor drop-shadow-lg"/>
-                </div>
+                <Button pt={{root: { style: {borderRadius: '100%'}}}} className="hover:ring-2 hover:ring-SecondaryColor place-self-center self-center z-40 col-start-5 row-start-1 col-span-1 row-span-full row-start-1 bg-WAccentColor rounded-full flex items-center justify-center size-10 cursor-pointer drop-shadow-lg" onClick={handleRightClick}>
+                    <FontAwesomeIcon icon={faChevronRight} className="z-50 text-4xl text-SecondaryColor drop-shadow-lg"/>
+                </Button>
         
 
         </div>
