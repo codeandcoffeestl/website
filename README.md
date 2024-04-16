@@ -50,5 +50,3 @@ Font Awesome Version: https://docs.fontawesome.com/
 -react : @fortawesome/react-fontawesome
 
 Google Maps Api: react-google-maps - https://visgl.github.io/react-google-maps/
-
-- Will need an `.env` file in `client` with `VITE_GOOGLE_MAPS_API_KEY=<Google Maps Api Key>`
