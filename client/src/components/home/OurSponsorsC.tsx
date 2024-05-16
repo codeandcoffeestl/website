@@ -66,6 +66,9 @@ const OurSponsorsC = () => {
       </div>
     </div>
   )
+    return (
+        <div id="oursponsors">OurSponsorsC</div>
+    )
 }
 
 export default OurSponsorsC
