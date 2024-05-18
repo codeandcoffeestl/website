@@ -10,8 +10,8 @@ import {
 const Footer = () => {
 
     const itemRenderer = (item: MenuItem) => (
-        <a className="flex p-menuitem-link text-white">
-            <span className="mx-2 ">{item.label}</span>
+        <a className="flex p-menuitem-link text-WAccentColor">
+            <span className="mx-5">{item.label}</span>
         </a>
     );
 
@@ -66,26 +66,25 @@ const Footer = () => {
         },
     ];
 
-
-
-
     return (
-        <footer className="bg-PrimaryColor flex">
+        <footer className="bg-PrimaryColor flex  justify-between items-center p-4 text-WAccentColor">
             <TieredMenu
                 className="bg-PrimaryColor"
                 model={items}
             />
-            <div className="bg-PrimaryColor text-white flex-grow">
+            <div className="flex-grow">
                 <br />
-                <h4>Visit Us</h4>
+                <h4 className="text-lg font-medium">Visit Us</h4>
                 <br />
                 {socials.map((social, index) => (
-                    <a key={index + "socialIconLink"} href={social.url}>
-                        <FontAwesomeIcon icon={social.icon} className="fa-2xl fa-fw fa-solid" />
+                    <a key={index + "socialIconLink"} href={social.url} className="bg-transparent" style={{ backgroundColor: 'transparent'}}>
+                        <FontAwesomeIcon icon={social.icon} className="fa-2xl fa-fw fa-solid fa-text m-1 md:m-3 
+                        hover:text-SecondaryColor hover:shadow-white-lg rounded-sm text-WAccentColor hover:bg-slate-100" />
                     </a>
                 ))}
             </div>
-            <div className="bg-PrimaryColor text-white">
+            
+            <div className="bg-PrimaryColor text-WAccentColor">
                 <br />
                 <div className="flex flex-col items-end">
                     <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="100" className="mb-2 mr-4"></img>
