@@ -1,4 +1,14 @@
+import React from "react";
+import RolesPopup from "./aboutComponents/rolesPopup"
+
 const AboutC = () => {
+    const [showPopup, setShowPopup] = React.useState(false);
+    const handlePopupToggle = () => {
+        setShowPopup(!showPopup);
+    };
+    const closePopup = () => {
+        setShowPopup(false);
+    }
 
     return (
         <div id="about" className="bg-SecondaryColor p-20 flex justify-center">
@@ -17,13 +27,17 @@ const AboutC = () => {
                     It's completely up to you!
                 </p>
 
-                <button>
+                <button onClick={handlePopupToggle}>
                     Contributes List &gt;&gt;
                 </button>
+                <RolesPopup trigger={showPopup} closePopup={closePopup}>
+                    <div>
+                        <h3>Roles popup section</h3>
+                    </div>
+                </RolesPopup>
             </div>
-
         </div>
-    )
-}
+    );
+};
 
 export default AboutC
