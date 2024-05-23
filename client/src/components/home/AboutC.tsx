@@ -32,7 +32,10 @@ const AboutC = () => {
                 </button>
                 <RolesPopup trigger={showPopup} closePopup={closePopup}>
                     <div>
-                        <h3>Roles popup section</h3>
+                        <h2 className="text-black text-3xl font-bold mb-1 text-center md:text-left">
+                            About Code & Coffee St.Louis</h2>
+
+                        <hr className="border-2 border-dashed border-SecondaryColor px-5" />
                     </div>
                 </RolesPopup>
             </div>
