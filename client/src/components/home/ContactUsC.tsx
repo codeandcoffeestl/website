@@ -7,6 +7,7 @@ import { classNames } from 'primereact/utils';
 import { InputTextarea } from "primereact/inputtextarea";
 import { InputText } from 'primereact/inputtext';
 import { Card } from 'primereact/card';
+import ContactUsPic from '../../assets/contactUs.png'
 
 export default function ContactUsC() {
     const defaultValues = {
@@ -25,13 +26,11 @@ export default function ContactUsC() {
     const toast = useRef(null);
 
     const show = () => {
-        toast.current.show({ severity: 'success', summary: 'Form Submitted', detail: getValues("name") });
+        if (toast.current) {
+            const toastInstance = toast.current as Toast;
+            toastInstance.show({ severity: 'success', summary: 'Form Submitted', detail: getValues("name") });
+        }
     };
-
-
-
-
-
 
     const onSubmit = async (data: any) => {
         data && show();
@@ -48,13 +47,19 @@ export default function ContactUsC() {
         reset();
     };
 
-    const getFormErrorMessage = (name: string) => {
-        return errors[name] ? <small className="p-error">{errors[name].message}</small> : <small className="p-error">&nbsp;</small>;
+    const getFormErrorMessage = (name: keyof typeof errors) => {
+        return errors[name] ? <small className="p-error">{errors[name]?.message}</small> : <small className="p-error">&nbsp;</small>;
     };
 
     return (
-        <div id="contact" className='card bg-black'>
-            <div className="form-contact">
+        <div id="contact" className='card' style={{
+            backgroundImage: `url(${ContactUsPic})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center center",
+        }}>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScsnMtCqoNHPxJy0v0y3Yw9OtWjiLwMXSKTRQVaUxBBS_g94Q/viewform?embedded=true" width="640" height="726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            {/* <div className="form-contact" >
                 <div className="flex justify-center">
                     <Card className='opacity-90  card-contact'>
                         <h2 className="text-center text-SecondaryColor text-[36px] pb-3 font-bold ">Contact Us</h2>
@@ -122,7 +127,7 @@ export default function ContactUsC() {
                         </form>
                     </Card>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
