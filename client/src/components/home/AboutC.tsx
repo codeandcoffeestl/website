@@ -1,5 +1,5 @@
 import React from "react";
-import RolesPopup from "./aboutComponents/RolesPopup";
+import RolesPopup from "./aboutComponents/rolesPopup";
 
 const AboutC = () => {
     const [showPopup, setShowPopup] = React.useState(false);
@@ -32,7 +32,7 @@ const AboutC = () => {
                     Contributes List &nbsp;&gt;&gt;
                 </button>
                 <RolesPopup trigger={showPopup} closePopup={closePopup}>
-                    <div className="flex flex-col w-full w-[95%]">
+                    <div className="flex flex-col w-full w-[96%]">
                         <h2 className="text-black text-3xl font-bold mb-1 text-center md:text-left">
                             Who Keep Code and Coffee St.Louis Running</h2>
 
