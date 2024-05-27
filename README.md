@@ -47,5 +47,3 @@ Font Awesome Version: https://docs.fontawesome.com/
 
 - icons Version: 6.5.1 - @fortawesome/free-brands-svg-icons
 - react Version: 0.2.0 - @fortawesome/react-fontawesome
-
-react-hook-form Version: 7.51.1 - https://react-hook-form.com/
