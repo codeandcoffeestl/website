@@ -20,7 +20,8 @@ export const RolesCard: React.FC<RoleCardProps> = ({ contributorName, roleName, 
                         <h2 className="text-xl text-black font-bold">{contributorName}</h2>
                         <h4 className="text-black">Role: {roleName}</h4>
 
-                        <a href={roleUrl} className="text-lg cursor-pointer flex items-center hover:text-shadow-none hover:font-bold" style={{ background: 'transparent' }}>
+                        <a href={roleUrl} className="text-lg cursor-pointer flex items-center hover:text-shadow-none hover:font-bold" 
+                                style={{ background: 'transparent' }}>
                             <FontAwesomeIcon icon={faUserGroup} className="text-OHighlightColor fa-md pr-2" />
                             <h4 style={{ textShadow: '2px 2px 2px rgba(0,0,0,0.2)', boxShadow: 'none'}} 
                               onMouseEnter={(e) => {
@@ -28,10 +29,11 @@ export const RolesCard: React.FC<RoleCardProps> = ({ contributorName, roleName, 
                               onMouseLeave={(e) => {
                                 (e.target as HTMLElement).style.textShadow = '2px 2px 2px rgba(0,0,0,0.3)'}}
                             >
-                                Reach me here</h4>                           
+                                Connect with me</h4>                           
                         </a>
                     </div>
-                    <img className="w-25 h-25 bg-SecondaryColor rounded-full object-cover" src={"../../src/assets/" + roleImage + ".png"} alt={roleImage + " roleImage"} />
+                    <img className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-SecondaryColor rounded-full object-cover"
+                        src={"../../src/assets/" + roleImage + ".png"} alt={roleImage + " roleImage"} />
                 </div>
                 <div className="relative z-10 mt-4 pl-5 md:pb-3 text-left">
                     <p className="text-black leading-relaxed overflow-hidden">{roleDescription}</p>
