@@ -23,8 +23,10 @@ export const RolesCard: React.FC<RoleCardProps> = ({ contributorName, roleName, 
                         <a href={roleUrl} className="text-lg cursor-pointer flex items-center hover:text-shadow-none hover:font-bold" style={{ background: 'transparent' }}>
                             <FontAwesomeIcon icon={faUserGroup} className="text-OHighlightColor fa-md pr-2" />
                             <h4 style={{ textShadow: '2px 2px 2px rgba(0,0,0,0.2)', boxShadow: 'none'}} 
-                              onMouseEnter={(e) => e.target.style.textShadow = 'none'}
-                              onMouseLeave={(e) => e.target.style.textShadow = '2px 2px 2px rgba(0,0,0,0.3)'}
+                              onMouseEnter={(e) => {
+                                (e.target as HTMLElement).style.textShadow = 'none'}}
+                              onMouseLeave={(e) => {
+                                (e.target as HTMLElement).style.textShadow = '2px 2px 2px rgba(0,0,0,0.3)'}}
                             >
                                 Reach me here</h4>                           
                         </a>
