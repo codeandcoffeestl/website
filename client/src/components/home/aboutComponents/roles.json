@@ -29,17 +29,17 @@
         "roleDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
     },
         {
-        "contributorName": "ContributorName-3",
-        "roleName": "roleName-3",
-        "roleUrl": "#",
-        "roleImage": "role-3",
-        "roleDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+        "contributorName": "Tudor Seserman",
+        "roleName": "roleName-5",
+        "roleUrl": "https://www.linkedin.com/in/tudorseserman/",
+        "roleImage": "/Tudor-Seserman.jpeg",
+        "roleDescription": "Always learning."
     },
         {
-        "contributorName": "ContributorName-4",
-        "roleName": "roleName-4",
-        "roleUrl": "#",
-        "roleImage": "role-4",
-        "roleDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+        "contributorName": "Mika Zukeyama",
+        "roleName": "roleName-6",
+        "roleUrl": "https://www.linkedin.com/in/mika-zukeyama/",
+        "roleImage": "/Mika-Zukeyama.jpeg",
+        "roleDescription": "Hi! I'm Mika, an enthusiastic learner and aspiring software developer. I enjoy the challenge of turning ideas into reality. \nLet's create something amazing together!"
     }
 ]
