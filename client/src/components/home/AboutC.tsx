@@ -32,7 +32,7 @@ const AboutC = () => {
                     Contributes List &nbsp;&gt;&gt;
                 </button>
                 <RolesPopup trigger={showPopup} closePopup={closePopup}>
-                    <div className="flex flex-col w-full w-[96%]">
+                    <div className="flex flex-col w-full"  style={{ paddingLeft: '1.2rem', paddingRight: '1.2rem' }}>
                         <h2 className="text-black text-3xl font-bold mb-1 text-center md:text-left">
                             Who Keep Code and Coffee St.Louis Running</h2>
 
