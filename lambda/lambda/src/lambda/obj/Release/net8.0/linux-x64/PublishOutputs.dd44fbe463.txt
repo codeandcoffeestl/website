@@ -1,0 +1,16 @@
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/lambda
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/appsettings.Development.json
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/appsettings.json
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/aws-lambda-tools-defaults.json
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/lambda.deps.json
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/lambda.runtimeconfig.json
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/lambda.pdb
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/Amazon.Lambda.APIGatewayEvents.dll
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/Amazon.Lambda.ApplicationLoadBalancerEvents.dll
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/Amazon.Lambda.AspNetCoreServer.dll
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/Amazon.Lambda.AspNetCoreServer.Hosting.dll
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/Amazon.Lambda.Core.dll
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/Amazon.Lambda.Logging.AspNetCore.dll
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/Amazon.Lambda.RuntimeSupport.dll
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/Amazon.Lambda.Serialization.SystemTextJson.dll
+/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/bin/Release/net8.0/publish/lambda.dll

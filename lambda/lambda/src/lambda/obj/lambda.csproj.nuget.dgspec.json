@@ -1,0 +1,98 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/lambda.csproj": {}
+  },
+  "projects": {
+    "/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/lambda.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/lambda.csproj",
+        "projectName": "lambda",
+        "projectPath": "/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/lambda.csproj",
+        "packagesPath": "/Users/tudorseserman/.nuget/packages/",
+        "outputPath": "/Users/tudorseserman/Desktop/Projects/CC/website/lambda/lambda/src/lambda/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/tudorseserman/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Amazon.Lambda.AspNetCoreServer.Hosting": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+              "version": "[8.0.2, 8.0.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Crossgen2.osx-x64",
+              "version": "[8.0.2, 8.0.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[8.0.2, 8.0.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+              "version": "[8.0.2, 8.0.2]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

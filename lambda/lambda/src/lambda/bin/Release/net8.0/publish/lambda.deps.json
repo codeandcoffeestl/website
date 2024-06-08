@@ -1,0 +1,281 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0/linux-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {},
+    ".NETCoreApp,Version=v8.0/linux-x64": {
+      "lambda/1.0.0": {
+        "dependencies": {
+          "Amazon.Lambda.AspNetCoreServer.Hosting": "1.7.0"
+        },
+        "runtime": {
+          "lambda.dll": {}
+        }
+      },
+      "Amazon.Lambda.APIGatewayEvents/2.7.0": {
+        "runtime": {
+          "lib/net8.0/Amazon.Lambda.APIGatewayEvents.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "Amazon.Lambda.ApplicationLoadBalancerEvents/2.2.0": {
+        "runtime": {
+          "lib/net8.0/Amazon.Lambda.ApplicationLoadBalancerEvents.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Amazon.Lambda.AspNetCoreServer/9.0.0": {
+        "dependencies": {
+          "Amazon.Lambda.APIGatewayEvents": "2.7.0",
+          "Amazon.Lambda.ApplicationLoadBalancerEvents": "2.2.0",
+          "Amazon.Lambda.Core": "2.2.0",
+          "Amazon.Lambda.Logging.AspNetCore": "3.1.0",
+          "Amazon.Lambda.Serialization.SystemTextJson": "2.4.1"
+        },
+        "runtime": {
+          "lib/net8.0/Amazon.Lambda.AspNetCoreServer.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.4.0"
+          }
+        }
+      },
+      "Amazon.Lambda.AspNetCoreServer.Hosting/1.7.0": {
+        "dependencies": {
+          "Amazon.Lambda.APIGatewayEvents": "2.7.0",
+          "Amazon.Lambda.AspNetCoreServer": "9.0.0",
+          "Amazon.Lambda.Core": "2.2.0",
+          "Amazon.Lambda.RuntimeSupport": "1.10.0"
+        },
+        "runtime": {
+          "lib/net8.0/Amazon.Lambda.AspNetCoreServer.Hosting.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Amazon.Lambda.Core/2.2.0": {
+        "runtime": {
+          "lib/net8.0/Amazon.Lambda.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Amazon.Lambda.Logging.AspNetCore/3.1.0": {
+        "dependencies": {
+          "Amazon.Lambda.Core": "2.2.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.1.0",
+          "Microsoft.Extensions.Logging": "2.1.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amazon.Lambda.Logging.AspNetCore.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "Amazon.Lambda.RuntimeSupport/1.10.0": {
+        "dependencies": {
+          "Amazon.Lambda.Core": "2.2.0"
+        },
+        "runtime": {
+          "lib/net8.0/Amazon.Lambda.RuntimeSupport.dll": {
+            "assemblyVersion": "1.10.0.0",
+            "fileVersion": "1.10.0.0"
+          }
+        }
+      },
+      "Amazon.Lambda.Serialization.SystemTextJson/2.4.1": {
+        "dependencies": {
+          "Amazon.Lambda.Core": "2.2.0"
+        },
+        "runtime": {
+          "lib/net8.0/Amazon.Lambda.Serialization.SystemTextJson.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration/2.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "2.1.0"
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/2.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.1.0"
+        }
+      },
+      "Microsoft.Extensions.Configuration.Binder/2.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "2.1.0"
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.0": {},
+      "Microsoft.Extensions.Logging/2.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Binder": "2.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.1.0",
+          "Microsoft.Extensions.Options": "2.1.0"
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/2.1.0": {},
+      "Microsoft.Extensions.Options/2.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.0",
+          "Microsoft.Extensions.Primitives": "2.1.0"
+        }
+      },
+      "Microsoft.Extensions.Primitives/2.1.0": {
+        "dependencies": {
+          "System.Memory": "4.5.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+        }
+      },
+      "System.Memory/4.5.0": {},
+      "System.Runtime.CompilerServices.Unsafe/4.5.0": {}
+    }
+  },
+  "libraries": {
+    "lambda/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Amazon.Lambda.APIGatewayEvents/2.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HAbdRKLzvUqRg/fItan7up/PWsj6vQfYF+1a4YV6sv1bq5TuK/ra+ndJwWMlzL+MFJzJaHwCmtkyBbh/vz8Oig==",
+      "path": "amazon.lambda.apigatewayevents/2.7.0",
+      "hashPath": "amazon.lambda.apigatewayevents.2.7.0.nupkg.sha512"
+    },
+    "Amazon.Lambda.ApplicationLoadBalancerEvents/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UtCd9tFuVyED8+DmDKEkdXJbAb/TdHIz51R/CsJCexKerO6HGOG87FGId4Ce9IXE+qjlBGyNQsKCw9oLLNe0hw==",
+      "path": "amazon.lambda.applicationloadbalancerevents/2.2.0",
+      "hashPath": "amazon.lambda.applicationloadbalancerevents.2.2.0.nupkg.sha512"
+    },
+    "Amazon.Lambda.AspNetCoreServer/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XNpC9zGXpPHKmPEKdO2BrfbC4ofE3y7Vgm+hTL3sUd38TMunkUzNt0p/RdB6FDNd3CcQv7yFYB7l8sReZrTB0Q==",
+      "path": "amazon.lambda.aspnetcoreserver/9.0.0",
+      "hashPath": "amazon.lambda.aspnetcoreserver.9.0.0.nupkg.sha512"
+    },
+    "Amazon.Lambda.AspNetCoreServer.Hosting/1.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lcDSykjJwDqDO3Jb/VZNmXEIRIWBMemexo3i0ZH8Vlhn5E6hyzpxdfO1afI9McZ2SVmSjA5oOzZ2NFzw0ihqQg==",
+      "path": "amazon.lambda.aspnetcoreserver.hosting/1.7.0",
+      "hashPath": "amazon.lambda.aspnetcoreserver.hosting.1.7.0.nupkg.sha512"
+    },
+    "Amazon.Lambda.Core/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DHqKeD1CYocP0t1dJC/NaXfu+5k6AoqnQ1Hlu/J2mXpLpCyeJfY+tIqT5fpruDarUlU0NtdIH8zSkCjeinyb1A==",
+      "path": "amazon.lambda.core/2.2.0",
+      "hashPath": "amazon.lambda.core.2.2.0.nupkg.sha512"
+    },
+    "Amazon.Lambda.Logging.AspNetCore/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4SD+db3WUBMTl+0p/4C2/zalkG2gMFc9PYwLv4UGPkq6WUlek9hmom0igKkcGY5/1uprEdG/zQ5abKUfs6z0dQ==",
+      "path": "amazon.lambda.logging.aspnetcore/3.1.0",
+      "hashPath": "amazon.lambda.logging.aspnetcore.3.1.0.nupkg.sha512"
+    },
+    "Amazon.Lambda.RuntimeSupport/1.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J1NdaUV24sWALmCjzJJ6vezskeeH2NxJU7ao86rgdzW+AcgnhYjIULuKQNAx6fTl8AP/8acFsq7Jp7k156hh4A==",
+      "path": "amazon.lambda.runtimesupport/1.10.0",
+      "hashPath": "amazon.lambda.runtimesupport.1.10.0.nupkg.sha512"
+    },
+    "Amazon.Lambda.Serialization.SystemTextJson/2.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-X06Z8zPDZJS/xAoAntSqsxOoSSKKFJMg+0QGPRtlPt1mbP19HFXlXn+q+XqHdVWWFsiH/r7KbDIICr0nsrlwug==",
+      "path": "amazon.lambda.serialization.systemtextjson/2.4.1",
+      "hashPath": "amazon.lambda.serialization.systemtextjson.2.4.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SS8ce1GYQTkZoOq5bskqQ+m7xiXQjnKRiGfVNZkkX2SX0HpXNRsKnSUaywRRuCje3v2KT9xeacsM3J9/G2exsQ==",
+      "path": "microsoft.extensions.configuration/2.1.0",
+      "hashPath": "microsoft.extensions.configuration.2.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lMmUjAKvY9r6QmxCS15iSb6ulhwnh0zp44NtnVJ+HIDLFmu4iej41U+dU58On8NRezmlgRXiQtLnBeZSzYNKQg==",
+      "path": "microsoft.extensions.configuration.abstractions/2.1.0",
+      "hashPath": "microsoft.extensions.configuration.abstractions.2.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Binder/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Fls0O54Ielz1DiVYpcmiUpeizN1iKGGI5yAWAoShfmUvMcQ8jAGOK1a+DaflHA5hN9IOKvmSos0yewDYAIY0ZA==",
+      "path": "microsoft.extensions.configuration.binder/2.1.0",
+      "hashPath": "microsoft.extensions.configuration.binder.2.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8/CtASu80UIoyG+r8FstrmZW5GLtXxzoYpjj3jV0FKZCL5CiFgSH3pAmqut/dC68mu7N1bU6v0UtKKL3gCUQGQ==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/2.1.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kuZbZMMHb7ibzhLdn9/R1+PAAFKntlF10tOw4loB8VuQkHvSrBE6IzW1rhBLsEdmLXOgi2zFbwcXFrxzSM6ybA==",
+      "path": "microsoft.extensions.logging/2.1.0",
+      "hashPath": "microsoft.extensions.logging.2.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GfD2VtvN9z1W+m6pZZe98yh9VWTSdNY2dZSxtca9uFIY6aBI6twvskMvLO/ktClBOTQmAov/7Em+IWFlHepa0A==",
+      "path": "microsoft.extensions.logging.abstractions/2.1.0",
+      "hashPath": "microsoft.extensions.logging.abstractions.2.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VOM1pPMi9+7/4Vc9aPLU8btHOBQy1+AvpqxLxFI2OVtqGv+1klPaV59g9R6aSt2U7ijfB3TjvAO4Tc/cn9/hxA==",
+      "path": "microsoft.extensions.options/2.1.0",
+      "hashPath": "microsoft.extensions.options.2.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gMwH6wgWOPfyfLfMLEP+ZF7/MSJq35e0xxKEYUjt8veEznY45nBVqdfI876+9SFQq2ChcqKf2UyYc2XYj2v27w==",
+      "path": "microsoft.extensions.primitives/2.1.0",
+      "hashPath": "microsoft.extensions.primitives.2.1.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m0psCSpUxTGfvwyO0i03ajXVhgBqyXlibXz0Mo1dtKGjaHrXFLnuQ8rNBTmWRqbfRjr4eC6Wah4X5FfuFDu5og==",
+      "path": "system.memory/4.5.0",
+      "hashPath": "system.memory.4.5.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YrzNWduCDHhUaSRBxHxL11UkM2fD6y8hITHis4/LbQZ6vj3vdRjoH3IoPWWC9uDXK2wHIqn+b5gv1Np/VKyM1g==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512"
+    }
+  }
+}
