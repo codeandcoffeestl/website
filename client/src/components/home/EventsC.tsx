@@ -2,25 +2,37 @@ import { Button } from "primereact/button"
 import { Card } from "primereact/card"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 
 const EventsC = () => {
-    const fakeData = [
-        {
-            title: "Code & Coffee",
-            date: "1/7, 2024 | Sunday",
-            time: "12pm - 3pm CST"
-        },
-        {
-            title: "Code & Coffee",
-            date: "1/7, 2024 | Sunday",
-            time: "12pm - 3pm CST"
-        },
-        {
-            title: "Code & Coffee",
-            date: "1/7, 2024 | Sunday",
-            time: "12pm - 3pm CST"
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        try {
+            const returnedData = fetch(" https://m2l5iuxis4pw3fegfg62vkgcfq0umloq.lambda-url.us-east-1.on.aws/")
+            returnedData.then(async r => setData(await r.json()))
+        } catch (e) {
+            console.log(e)
         }
-    ]
+    }, []);
+
+    // const fakeData = [
+    //     {
+    //         title: "Code & Coffee",
+    //         date: "1/7, 2024 | Sunday",
+    //         time: "12pm - 3pm CST"
+    //     },
+    //     {
+    //         title: "Code & Coffee",
+    //         date: "1/7, 2024 | Sunday",
+    //         time: "12pm - 3pm CST"
+    //     },
+    //     {
+    //         title: "Code & Coffee",
+    //         date: "1/7, 2024 | Sunday",
+    //         time: "12pm - 3pm CST"
+    //     }
+    // ]
 
     return (
         <div id="events" >
@@ -43,8 +55,8 @@ const EventsC = () => {
 
                 <hr className="relative z-10 border-2 border-dashed border-SecondaryColor" />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 pt-2">
-                    {fakeData.map((event, index) => (
+                {data && <div className="grid grid-cols-1 md:grid-cols-3 pt-2">
+                    {data.map((event, index) => (
                         <Card title={event.title} key={index} className="z-10">
                             <FontAwesomeIcon icon={faCalendarCheck} className="
                                                                         fa-xl 
@@ -53,7 +65,7 @@ const EventsC = () => {
                         </Card>
                     ))}
 
-                </div>
+                </div>}
             </div>
 
         </div>
