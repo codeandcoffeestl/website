@@ -52,7 +52,7 @@ const Footer = () => {
         {
             id: "FootIcon1",
             icon: faDiscord,
-            url: "https://discord.com/",
+            url: "https://discord.gg/RyA8cuu5Rq",
         },
         {
             id: "FootIcon2",
