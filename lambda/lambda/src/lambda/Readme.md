@@ -1,17 +1,22 @@
-# Code and Coffee STL Serveless Backend
+# Code and Coffee STL Serverless Backend
 
-I used an AWS Lambda Templet to get stareted, the original Readme is below.
+I used an AWS Lambda Template to get started, the original Readme is below.
 
-## Added GraphQL Client packages ##
-I added the following packages in order to use this lambda as a client inorder to communicate with Meetup's API:
+## Added GraphQL Client packages
+
+I added the following packages in order to use this lambda as a client in order to communicate with Meetup's API:
+
 - GraphQL.Client 6.1.0
 - GraphQL.Client,Serializer.Newtonsoft 6.1.0
 
-## Resouces ##
+## Resouces
+
 For AWS Lambda:
- - https://codewithmukesh.com/blog/amazon-api-gateway-with-dotnet/
+
+- https://codewithmukesh.com/blog/amazon-api-gateway-with-dotnet/
 
 For GraphQL:
+
 - https://graphql-aspnet.github.io/docs/quick/overview
 - https://code-maze.com/consume-graphql-api-with-asp-net-core/
 
@@ -19,31 +24,30 @@ For GraphQL:
 
 This project shows how to run an ASP.NET Core Web API project as an AWS Lambda exposed through Amazon API Gateway. The NuGet package [Amazon.Lambda.AspNetCoreServer](https://www.nuget.org/packages/Amazon.Lambda.AspNetCoreServer) contains a Lambda function that is used to translate requests from API Gateway into the ASP.NET Core framework and then the responses from ASP.NET Core back to API Gateway.
 
-
 For more information about how the Amazon.Lambda.AspNetCoreServer package works and how to extend its behavior view its [README](https://github.com/aws/aws-lambda-dotnet/blob/master/Libraries/src/Amazon.Lambda.AspNetCoreServer/README.md) file in GitHub.
 
-## Executable Assembly ##
+## Executable Assembly
 
-.NET Lambda projects that use C# top level statements like this project must be deployed as an executable assembly instead of a class library. To indicate to Lambda that the .NET function is an executable assembly the 
+.NET Lambda projects that use C# top level statements like this project must be deployed as an executable assembly instead of a class library. To indicate to Lambda that the .NET function is an executable assembly the
 Lambda function handler value is set to the .NET Assembly name. This is different then deploying as a class library where the function handler string includes the assembly, type and method name.
 
 To deploy as an executable assembly the Lambda runtime client must be started to listen for incoming events to process. For an ASP.NET Core application the Lambda runtime client is started by included the
 `Amazon.Lambda.AspNetCoreServer.Hosting` NuGet package and calling `AddAWSLambdaHosting(LambdaEventSource.HttpApi)` passing in the event source while configuring the services of the application. The
-event source can be API Gateway REST API and HTTP API or Application Load Balancer.  
+event source can be API Gateway REST API and HTTP API or Application Load Balancer.
 
-### Project Files ###
+### Project Files
 
-* serverless.template - an AWS CloudFormation Serverless Application Model template file for declaring your Serverless functions and other AWS resources
-* aws-lambda-tools-defaults.json - default argument settings for use with Visual Studio and command line deployment tools for AWS
-* Program.cs - entry point to the application that contains all of the top level statements initializing the ASP.NET Core application.
-The call to `AddAWSLambdaHosting` configures the application to work in Lambda when it detects Lambda is the executing environment. 
-* Controllers\CalculatorController - example Web API controller
+- serverless.template - an AWS CloudFormation Serverless Application Model template file for declaring your Serverless functions and other AWS resources
+- aws-lambda-tools-defaults.json - default argument settings for use with Visual Studio and command line deployment tools for AWS
+- Program.cs - entry point to the application that contains all of the top level statements initializing the ASP.NET Core application.
+  The call to `AddAWSLambdaHosting` configures the application to work in Lambda when it detects Lambda is the executing environment.
+- Controllers\CalculatorController - example Web API controller
 
 You may also have a test project depending on the options selected.
 
 ## Here are some steps to follow from Visual Studio:
 
-To deploy your Serverless application, right click the project in Solution Explorer and select *Publish to AWS Lambda*.
+To deploy your Serverless application, right click the project in Solution Explorer and select _Publish to AWS Lambda_.
 
 To view your deployed application open the Stack View window by double-clicking the stack name shown beneath the AWS CloudFormation node in the AWS Explorer tree. The Stack View also displays the root URL to your published application.
 
@@ -52,16 +56,19 @@ To view your deployed application open the Stack View window by double-clicking 
 Once you have edited your template and code you can deploy your application using the [Amazon.Lambda.Tools Global Tool](https://github.com/aws/aws-extensions-for-dotnet-cli#aws-lambda-amazonlambdatools) from the command line.
 
 Install Amazon.Lambda.Tools Global Tools if not already installed.
+
 ```
     dotnet tool install -g Amazon.Lambda.Tools
 ```
 
 If already installed check if new version is available.
+
 ```
     dotnet tool update -g Amazon.Lambda.Tools
 ```
 
 Deploy application
+
 ```
     cd "lambda/src/lambda"
     dotnet lambda deploy-serverless

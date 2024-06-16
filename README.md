@@ -1,10 +1,12 @@
-# website
+# Website
 
-Official Code and Coffee website development
+Official Code and Coffee Website Development
+
+## Frontend
 
 ---
 
-To get Going:
+### To get the frontend going:
 
 `$cd client`
 
@@ -50,3 +52,40 @@ Font Awesome Version: https://docs.fontawesome.com/
 -react : @fortawesome/react-fontawesome
 
 Google Maps Api: react-google-maps - https://visgl.github.io/react-google-maps/
+
+## Backend
+
+We are using a serverless backend build on AWS Lambdas build using ASP.NET 8.
+
+I used an AWS Lambda Template to get started, a more detailed Readme is in the project directory.
+
+---
+
+### To be able to test the backend:
+
+Make sure you have .NET 8 SDK installed
+
+`$dotnet restore`
+
+To test the lambda locally:
+
+`$dotnet build`
+
+`dotnet run`
+
+To build lambda on AWS:
+
+```
+$cd "lambda/src/lambda"
+$dotnet lambda deploy-serverless
+
+```
+
+---
+
+# Packages
+
+I added the following packages in order to use this lambda as a client in order to communicate with Meetup's API:
+
+- GraphQL.Client 6.1.0
+- GraphQL.Client,Serializer.Newtonsoft 6.1.0
