@@ -1,3 +1,20 @@
+# Code and Coffee STL Serveless Backend
+
+I used an AWS Lambda Templet to get stareted, the original Readme is below.
+
+## Added GraphQL Client packages ##
+I added the following packages in order to use this lambda as a client inorder to communicate with Meetup's API:
+- GraphQL.Client 6.1.0
+- GraphQL.Client,Serializer.Newtonsoft 6.1.0
+
+## Resouces ##
+For AWS Lambda:
+ - https://codewithmukesh.com/blog/amazon-api-gateway-with-dotnet/
+
+For GraphQL:
+- https://graphql-aspnet.github.io/docs/quick/overview
+- https://code-maze.com/consume-graphql-api-with-asp-net-core/
+
 # ASP.NET Core Minimal API Serverless Application
 
 This project shows how to run an ASP.NET Core Web API project as an AWS Lambda exposed through Amazon API Gateway. The NuGet package [Amazon.Lambda.AspNetCoreServer](https://www.nuget.org/packages/Amazon.Lambda.AspNetCoreServer) contains a Lambda function that is used to translate requests from API Gateway into the ASP.NET Core framework and then the responses from ASP.NET Core back to API Gateway.
