@@ -35,7 +35,7 @@ public class OwnerConsumer
         };
             
         var response = await _client.SendQueryAsync<ResponseEventCollectionType>(query);
-        return response.Data.Events;
+        return response.Data.GroupByUrlname.UpcomingEvents.Edges.Select(e=>new Event(e.Node.title,e.Node.eventUrl,e.Node.dateTime)).ToList();
     }
 }
 

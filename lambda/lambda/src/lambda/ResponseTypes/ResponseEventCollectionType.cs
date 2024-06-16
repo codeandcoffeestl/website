@@ -4,5 +4,6 @@ namespace lambda.ResponseTypes;
 
 public class ResponseEventCollectionType
 {
-    public List<Event> Events { get; set; }
+    public Group GroupByUrlname { get; set; }
+    
 }
