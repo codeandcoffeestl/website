@@ -5,24 +5,6 @@ import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
 const EventsC = () => {
-    const fakeData = [
-        {
-            title: "Code & Coffee",
-            date: "1/7, 2024 | Sunday",
-            time: "12pm - 3pm CST"
-        },
-        {
-            title: "Code & Coffee",
-            date: "1/7, 2024 | Sunday",
-            time: "12pm - 3pm CST"
-        },
-        {
-            title: "Code & Coffee",
-            date: "1/7, 2024 | Sunday",
-            time: "12pm - 3pm CST"
-        }
-    ]
-
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -34,7 +16,30 @@ const EventsC = () => {
         }
     }, []);
 
+    function formatDateTime(date: Date) {
 
+        const endDate = new Date(date);
+        endDate.setHours(date.getHours() + 3);
+
+        const formattedDate = new Intl.DateTimeFormat('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }).format(date);
+
+        const formattedDayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
+
+        const formattedStartTime = new Intl.DateTimeFormat('en-US', { hour: 'numeric', hour12: true }).format(date);
+        const formattedEndTime = new Intl.DateTimeFormat('en-US', { hour: 'numeric', hour12: true }).format(endDate);
+
+        const timeZone = 'CST';
+
+        const formattedString = <span>{formattedDate} | {formattedDayOfWeek}<br /> {formattedStartTime} - {formattedEndTime} {timeZone}</span>;
+
+        return formattedString;
+    }
+
+    function header(title: String) {
+        return (
+            <h3 className="text-SecondaryColor text-2xl font-bold pt-3">{title}</h3>
+        )
+    }
 
     return (
         <div id="events" >
@@ -47,7 +52,7 @@ const EventsC = () => {
                         Upcoming Events
                     </h3>
                     <Button className="bg-OHighlightColor text-PrimaryColor font-semibold text-xl"
-                        label="All Event Details"
+                        label="All Events"
                         link
                         onClick={() => window.open("https://www.meetup.com/code-and-coffee-st-louis/", '_blank')} />
 
@@ -57,20 +62,23 @@ const EventsC = () => {
 
                 <hr className="relative z-10 border-2 border-dashed border-SecondaryColor" />
 
-                {data && <div className="grid grid-cols-1 md:grid-cols-3 pt-2">
-                    {data.map((event, index) => (
-                        <Card title={event.title} key={index} className="z-10">
-                            <FontAwesomeIcon icon={faCalendarCheck} className="
+                {data && <div className="grid grid-cols-1 md:grid-cols-3 pt-2 gap-2">
+                    {data.map((event: Array, index: Number) => (
+                        <Card key={index} header={header(event.title)} className="z-10 bg-PrimaryColor text-white">
+                            <p><FontAwesomeIcon icon={faCalendarCheck} className="
                                                                         fa-xl 
-                                                                        pr-2" />{event.dateTime}
-                            {event.time}
+                                                                        pr-2" />
+                                {formatDateTime(new Date(event.dateTime))}
+                            </p>
+                            <br />
+                            <Button label="See Event" link raised size="small" className=" bg-OHighlightColor text-PrimaryColor " onClick={() => window.open(event.eventUrl, '_blank')} />
                         </Card>
                     ))}
 
                 </div>}
             </div>
 
-        </div>
+        </div >
     )
 }
 
