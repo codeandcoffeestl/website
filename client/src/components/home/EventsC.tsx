@@ -5,34 +5,36 @@ import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
 const EventsC = () => {
+    const fakeData = [
+        {
+            title: "Code & Coffee",
+            date: "1/7, 2024 | Sunday",
+            time: "12pm - 3pm CST"
+        },
+        {
+            title: "Code & Coffee",
+            date: "1/7, 2024 | Sunday",
+            time: "12pm - 3pm CST"
+        },
+        {
+            title: "Code & Coffee",
+            date: "1/7, 2024 | Sunday",
+            time: "12pm - 3pm CST"
+        }
+    ]
+
     const [data, setData] = useState(null);
 
     useEffect(() => {
         try {
-            const returnedData = fetch(" https://m2l5iuxis4pw3fegfg62vkgcfq0umloq.lambda-url.us-east-1.on.aws/")
+            const returnedData = fetch(" https://m2l5iuxis4pw3fegfg62vkgcfq0umloq.lambda-url.us-east-1.on.aws/api/event")
             returnedData.then(async r => setData(await r.json()))
         } catch (e) {
             console.log(e)
         }
     }, []);
 
-    // const fakeData = [
-    //     {
-    //         title: "Code & Coffee",
-    //         date: "1/7, 2024 | Sunday",
-    //         time: "12pm - 3pm CST"
-    //     },
-    //     {
-    //         title: "Code & Coffee",
-    //         date: "1/7, 2024 | Sunday",
-    //         time: "12pm - 3pm CST"
-    //     },
-    //     {
-    //         title: "Code & Coffee",
-    //         date: "1/7, 2024 | Sunday",
-    //         time: "12pm - 3pm CST"
-    //     }
-    // ]
+
 
     return (
         <div id="events" >
@@ -60,7 +62,7 @@ const EventsC = () => {
                         <Card title={event.title} key={index} className="z-10">
                             <FontAwesomeIcon icon={faCalendarCheck} className="
                                                                         fa-xl 
-                                                                        pr-2" />{event.date}
+                                                                        pr-2" />{event.dateTime}
                             {event.time}
                         </Card>
                     ))}
