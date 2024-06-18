@@ -1,5 +1,9 @@
-import { Button } from "primereact/button"
+import React, { useState } from "react";
+import "../../index.css";
 
+type ButtonStyle = React.CSSProperties & {
+    ':hover'?: React.CSSProperties;
+  };
 
 const HeroC = () => {
     const handleClick = (anchor: string) => () => {
@@ -11,6 +15,29 @@ const HeroC = () => {
                 block: "start",
             });
         }
+    };
+
+    const [hoveredButton, setHoveredButton] = useState<string | null>(null);
+
+    const buttonStyle: ButtonStyle = {
+        fontFamily: 'Avenir, sans-serif',
+        width: '200px', // Fixed width for both buttons
+        padding: '10px', // Consistent padding
+        transition: 'transform 0.1s ease-in-out',
+    };
+
+    const hoverStyle: React.CSSProperties = {
+        fontWeight: 'bold',
+        borderColor: '#FFA500',
+        transform: 'scale(1.02)',
+    };
+
+    const handleMouseEnter = (buttonName: string) => {
+        setHoveredButton(buttonName);
+    };
+
+    const handleMouseLeave = () => {
+        setHoveredButton(null);
     };
 
     return (
@@ -29,14 +56,23 @@ const HeroC = () => {
                     <br/>
                     <br/>
                     <div className="min-w-full flex ">
-                    <Button 
-                    className="p-hero-buttons text-xl mr-3 bg-OHighlightColor text-PrimaryColor font-RockNROll One "
-                    onClick={handleClick('oursponsors')}>
+                    <button 
+                        style={hoveredButton === 'oursponsors' ? { ...buttonStyle, ...hoverStyle } : buttonStyle}
+                        onMouseEnter={() => handleMouseEnter('oursponsors')}
+                        onMouseLeave={handleMouseLeave}
+                        className="mr-5"
+                        onClick={handleClick('oursponsors')}
+                    >
                         Our Sponsors
-                    </Button>
-                    <Button className="bg-OHighlightColor text-PrimaryColor font-semibold text-xl">
+                    </button>
+                    <button
+                        style={hoveredButton === 'volunteer' ? { ...buttonStyle, ...hoverStyle } : buttonStyle}
+                        onMouseEnter={() => handleMouseEnter('volunteer')}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={handleClick('volunteer')}
+                    >
                         Sign Up for Volunterer 
-                    </Button>
+                    </button>
                     </div>
                 </section>
             </div>
