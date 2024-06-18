@@ -24,6 +24,7 @@ const HeroC = () => {
         width: '200px', // Fixed width for both buttons
         padding: '10px', // Consistent padding
         transition: 'transform 0.1s ease-in-out',
+        outline: 'none',
     };
 
     const hoverStyle: React.CSSProperties = {

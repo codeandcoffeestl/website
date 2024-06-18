@@ -51,6 +51,7 @@ button {
   color: #4B2E17;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 
               0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  outline: none;
 }
 
 button:hover {
@@ -62,10 +63,10 @@ button:hover {
 
 }
 
-button:focus,
+/* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 @media (prefers-color-scheme: light) {
   :root {
