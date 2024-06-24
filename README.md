@@ -45,8 +45,8 @@ TailwindCSS Version: 3.4.1 - https://tailwindcss.com/docs/guides/vite
 react-router-dom Version: 6.22.2 - https://www.npmjs.com/package/react-router-dom
 
 Font Awesome Version: https://docs.fontawesome.com/
--logo : @fortawesome/free-brands-svg-icons
--icons : @fortawesome/free-solid-svg-icons
+- icons Version: 6.5.1 - @fortawesome/free-brands-svg-icons
+- react Version: 0.2.0 - @fortawesome/react-fontawesome
 -react : @fortawesome/react-fontawesome
 
 Google Maps Api: react-google-maps - https://visgl.github.io/react-google-maps/
