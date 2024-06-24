@@ -15,6 +15,9 @@ export default {
         OHighlightColor: "#FFA500",
         YHighlightColor: "#FFD700",
       },
+      backgroundImage: {
+        coffeeBgImg: "url('../../src/assets/CoffeeBg.jpg')",
+      },
     },
   },
   plugins: [],
