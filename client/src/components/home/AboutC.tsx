@@ -1,5 +1,6 @@
 import React from "react";
 import RolesPopup from "./aboutComponents/rolesPopup";
+import { Button } from "primereact/button";
 
 const AboutC = () => {
     const [showPopup, setShowPopup] = React.useState(false);
@@ -28,9 +29,10 @@ const AboutC = () => {
                     It's completely up to you!
                 </p>
 
-                <button onClick={handlePopupToggle}>
-                    Contributes List &nbsp;&gt;&gt;
-                </button>
+                <Button 
+                    label="Contributes List >>"
+                    onClick={handlePopupToggle}
+                />
                 <RolesPopup trigger={showPopup} closePopup={closePopup}>
                     <div className="flex flex-col w-full"  style={{ paddingLeft: '1.2rem', paddingRight: '1.2rem' }}>
                         <h2 className="text-black text-3xl font-bold mb-1 text-center md:text-left">

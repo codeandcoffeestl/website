@@ -1,6 +1,7 @@
 import { ReactNode, useEffect } from "react";
 import { RolesCard } from "./RolesCard";
 import roles from './roles.json';
+import { Button } from "primereact/button";
 
 interface RolesPopupProps {
     trigger: boolean;
@@ -15,68 +16,6 @@ export interface IrolesCard {
     roleImage: string;
     roleDescription: string;
 }
-
-// const roles: IrolesCard[] = [
-//     {
-//         contributorName: "ContributorName-1",
-//         roleName: "roleName-1",
-//         roleUrl: "#",
-//         roleImage: "role-1",
-//         roleDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-//     },
-//     {
-//         contributorName: "ContributorName-2",
-//         roleName: "roleName-2",
-//         roleUrl: "#",
-//         roleImage: "role-2",
-//         roleDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-
-//     },
-//     {
-//         contributorName: "ContributorName-3",
-//         roleName: "roleName-3",
-//         roleUrl: "#",
-//         roleImage: "role-3",
-//         roleDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-
-//     },
-//     {
-//         contributorName: "ContributorName-4",
-//         roleName: "roleName-4",
-//         roleUrl: "#",
-//         roleImage: "role-4",
-//         roleDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-
-//     },
-//     {
-//         contributorName: "ContributorName-5",
-//         roleName: "roleName-5",
-//         roleUrl: "#",
-//         roleImage: "role-5",
-//         roleDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-//     },
-//     {
-//         contributorName: "ContributorName-6",
-//         roleName: "roleName-6",
-//         roleUrl: "#",
-//         roleImage: "role-6",
-//         roleDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-//     },
-//     {
-//         contributorName: "ContributorName-7",
-//         roleName: "roleName-7",
-//         roleUrl: "#",
-//         roleImage: "role-7",
-//         roleDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-//     },
-//     {
-//         contributorName: "ContributorName-8",
-//         roleName: "roleName-8",
-//         roleUrl: "#",
-//         roleImage: "role-8",
-//         roleDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-//     }
-// ]
 
 const RolesPopup: React.FC<RolesPopupProps> = ({trigger, closePopup, children}) => {
 
@@ -110,8 +49,11 @@ const RolesPopup: React.FC<RolesPopupProps> = ({trigger, closePopup, children}) 
                             ))}
                     </div>
                 </div>
-                <button className="close-btn mt-4" onClick={closePopup}>close</button>
-
+                <Button 
+                    label="close" 
+                    className="close-btn mt-4" 
+                    onClick={closePopup}
+                />
             </div>
         </div>
     ): null;
