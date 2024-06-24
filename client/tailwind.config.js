@@ -27,6 +27,9 @@ export default {
   variants: {
     extend: {
       boxShadow: ['hover'],
+      backgroundImage: {
+        coffeeBgImg: "url('../../src/assets/CoffeeBg.jpg')",
+      },
     },
   },
   plugins: [],

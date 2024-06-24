@@ -2,9 +2,9 @@ import { TieredMenu } from 'primereact/tieredmenu';
 import { MenuItem } from 'primereact/menuitem';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faLinkedin,
     faDiscord,
-    faXTwitter
+    faInstagram,
+    faMeetup
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
@@ -52,17 +52,17 @@ const Footer = () => {
         {
             id: "FootIcon1",
             icon: faDiscord,
-            url: "https://discord.com/",
+            url: "https://discord.gg/RyA8cuu5Rq",
         },
         {
             id: "FootIcon2",
-            icon: faLinkedin,
-            url: "https://www.linkedin.com",
+            icon: faInstagram,
+            url: "https://www.instagram.com/codecoffeestl/",
         },
         {
             id: "FootIcon3",
-            icon: faXTwitter,
-            url: "https://www.x.com",
+            icon: faMeetup,
+            url: "https://www.meetup.com/code-and-coffee-st-louis/",
         },
     ];
 
