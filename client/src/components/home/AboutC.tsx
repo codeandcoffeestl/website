@@ -13,9 +13,10 @@ const AboutC = () => {
     };
 
     return (
-        <div id="about" className="bg-SecondaryColor p-20 flex justify-center">
+        <div id="about" className="bg-SecondaryColor p-10 flex justify-center">
 
-            <div className="bg-WAccentColor py-4 px-6 md:py-10 md:px-20 max-w-3xl shadow-xl">
+            <div className="bg-WAccentColor py-4 px-6 md:py-10 md:px-20 max-w-3xl shadow-xl" 
+            >
              
                 <h2 className="text-black text-3xl font-bold mb-1 text-center md:text-left">
                     About Code & Coffee St.Louis</h2>

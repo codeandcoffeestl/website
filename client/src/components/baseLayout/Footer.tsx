@@ -87,8 +87,15 @@ const Footer = () => {
             <div className="bg-PrimaryColor text-WAccentColor">
                 <br />
                 <div className="flex flex-col items-end">
-                    <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" width="100" className="mb-2 mr-4"></img>
-                    <p className='text-xs mr-4'>@2024 Code and Coffee Developers </p>
+                    <a href='#'>
+                        <img 
+                            alt="logo" 
+                            src="../../public/code&coffee-original.png" 
+                            width="100" 
+                            className="mb-2 mr-4 ml-[20px] h-12 w-30 md:h-20 md:w-48" 
+                        />
+                    </a>
+                    <p className='text-xs mr-4 text-right'>@2024 Code and Coffee Developers </p>
                 </div>
             </div>
         </footer >
