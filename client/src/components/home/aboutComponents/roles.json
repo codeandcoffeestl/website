@@ -1,0 +1,30 @@
+[
+    {
+        "contributorName": "JerMarco Britton",
+        "roleName": "Social Entrepreneur",
+        "roleUrl": "https://www.linkedin.com/in/jermarcobritton/",
+        "roleImage": "/JerMarco-Britton.jpeg",
+        "roleDescription": "JerMarco Britton is a changemaker blending Art, Technology, and Community. As a social entrepreneur and artist, he leverages creative problem-solving for impactful client solutions.\nHis journey started in St. Louis' non-profit sector, sparking his passion for community development. This led to founding Soul Shed STL, a music organization fostering artistic and societal growth.\nJerMarco actively builds communities, co-founding the local 'Code and Coffee' chapter. Driven and team-oriented, he aims to innovate and transform industries."
+    },
+        {
+        "contributorName": "Denis Ikovlev",
+        "roleName": "Project Manager",
+        "roleUrl": "https://www.linkedin.com/in/denis-ikovlev/",
+        "roleImage": "/Denis-Ikovlev.jpeg",
+        "roleDescription": "As a Software Developer with 8+ years of experience, I bring projects to life through creative and innovative solutions. I find joy in witnessing an idea materialize, from planning and designing to configuring tools and passing tests. Whenever possible, I contribute to open-source projects, recognizing the collaborative nature of technological advancements. Additionally, my professional basketball career from 2007-2018 instilled in me the value of team collaboration, which I actively seek in software engineering roles to leverage my skills and continue growing professionally."
+    },
+        {
+        "contributorName": "Tudor Seserman",
+        "roleName": "Web Developer (Volunteer)",
+        "roleUrl": "https://www.linkedin.com/in/tudorseserman/",
+        "roleImage": "/Tudor-Seserman.jpeg",
+        "roleDescription": "Always learning."
+    },
+        {
+        "contributorName": "Mika Zukeyama",
+        "roleName": "Web Developer (Volunteer)",
+        "roleUrl": "https://www.linkedin.com/in/mika-zukeyama/",
+        "roleImage": "/Mika-Zukeyama.jpeg",
+        "roleDescription": "Hi! I'm Mika, an enthusiastic learner and aspiring software developer. I enjoy the challenge of turning ideas into reality. \nLet's create something amazing together!"
+    }
+]

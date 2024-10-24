@@ -15,6 +15,18 @@ export default {
         OHighlightColor: "#FFA500",
         YHighlightColor: "#FFD700",
       },
+      boxShadow: {
+        'white': '0 2px 20px rgba(255, 255, 255, 1)',
+        'white-lg': '0 2px 20px rgba(255, 255, 255, 1)',  
+      },
+      flexBasis: {
+        'content': 'content',
+      }
+    },
+  },
+  variants: {
+    extend: {
+      boxShadow: ['hover'],
       backgroundImage: {
         coffeeBgImg: "url('../../src/assets/CoffeeBg.jpg')",
       },
