@@ -105,14 +105,14 @@ const PastSpeakersCarouselC = () => {
                     <Image src={slide.src} imageClassName="aspect-video" className="flex z-10 col-start-1 container col-span-2 gap-x-0.5 row-span-full justify-center items-center drop-shadow-2xl select-none" alt={slide.alt} key={`key-${i}a`}/> 
                     : (slides[i - 1] === undefined && slides[slides.length - 1].selected) || (slides[i - 1] && slides[i - 1].selected ) ?
                     <Image src={slide.src} imageClassName="aspect-video" className="flex z-20 col-start-4 col-span-3  row-span-full justify-center items-center drop-shadow-2xl select-none" key={`key-${i}a`}/> 
-                    : <Image src={slide.src} imageClassName="aspect-video" className="flex z-20 col-start- col-span-3  row-span-full justify-center items-center drop-shadow-2xl hidden select-none" key={`key-${i}a`} />
-                })}
-
-                <Button pt={{root: { style: {borderRadius: '100%'}}}} className="hover:ring-2 hover:ring-SecondaryColor place-self-center self-center z-40 col-start-1 col-span-1 row-span-full row-start-1 bg-WAccentColor rounded-full flex items-center justify-center size-10 cursor-pointer drop-shadow-lg" onClick={handleLeftClick} >
+                    : <Image src={slide.src} imageClassName="aspect-video" className="z-20 col-start- col-span-3  row-span-full justify-center items-center drop-shadow-2xl hidden select-none" key={`key-${i}a`} />
+                })}      
+                
+                <Button rounded className="hover:ring-2 hover:ring-SecondaryColor place-self-center self-center z-40 col-start-1 col-span-1 row-span-full row-start-1 bg-WAccentColor flex items-center justify-center size-10 cursor-pointer drop-shadow-lg !rounded-full" onClick={handleLeftClick} >
                     <FontAwesomeIcon icon={faChevronLeft} className="z-50 text-4xl text-SecondaryColor drop-shadow-lg"/>
                 </Button>
                   
-                <Button pt={{root: { style: {borderRadius: '100%'}}}} className="hover:ring-2 hover:ring-SecondaryColor place-self-center self-center z-40 col-start-5 row-start-1 col-span-1 row-span-full row-start-1 bg-WAccentColor rounded-full flex items-center justify-center size-10 cursor-pointer drop-shadow-lg" onClick={handleRightClick}>
+                <Button rounded className=" focus-visible:animate-easeinout focus:outline-5 hover:ring-2 hover:ring-SecondaryColor place-self-center self-center z-40 col-start-5 col-span-1 row-span-full row-start-1 bg-WAccentColor flex items-center justify-center size-10 cursor-pointer drop-shadow-lg !rounded-full" onClick={handleRightClick}>
                     <FontAwesomeIcon icon={faChevronRight} className="z-50 text-4xl text-SecondaryColor drop-shadow-lg"/>
                 </Button>
         
