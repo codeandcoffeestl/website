@@ -108,11 +108,11 @@ const PastSpeakersCarouselC = () => {
                     : <Image src={slide.src} imageClassName="aspect-video" className="z-20 col-start- col-span-3  row-span-full justify-center items-center drop-shadow-2xl hidden select-none" key={`key-${i}a`} />
                 })}      
                 
-                <Button rounded className="hover:ring-2 hover:ring-SecondaryColor place-self-center self-center z-40 col-start-1 col-span-1 row-span-full row-start-1 bg-WAccentColor flex items-center justify-center size-10 cursor-pointer drop-shadow-lg !rounded-full" onClick={handleLeftClick} >
+                <Button rounded className="hover:ring-2 hover:ring-SecondaryColor place-self-center self-center z-40 col-start-1 col-span-1 row-span-full row-start-1 !bg-WAccentColor flex items-center justify-center size-10 cursor-pointer drop-shadow-lg !rounded-full" onClick={handleLeftClick} >
                     <FontAwesomeIcon icon={faChevronLeft} className="z-50 text-4xl text-SecondaryColor drop-shadow-lg"/>
                 </Button>
                   
-                <Button rounded className=" focus-visible:animate-easeinout focus:outline-5 hover:ring-2 hover:ring-SecondaryColor place-self-center self-center z-40 col-start-5 col-span-1 row-span-full row-start-1 bg-WAccentColor flex items-center justify-center size-10 cursor-pointer drop-shadow-lg !rounded-full" onClick={handleRightClick}>
+                <Button rounded className=" focus-visible:animate-easeinout focus:outline-5 hover:ring-2 hover:ring-SecondaryColor place-self-center self-center z-40 col-start-5 col-span-1 row-span-full row-start-1 !bg-WAccentColor flex items-center justify-center size-10 cursor-pointer drop-shadow-lg !rounded-full" onClick={handleRightClick}>
                     <FontAwesomeIcon icon={faChevronRight} className="z-50 text-4xl text-SecondaryColor drop-shadow-lg"/>
                 </Button>
         

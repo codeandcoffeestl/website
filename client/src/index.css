@@ -79,6 +79,12 @@ button:hover {
   transition: transform 0.1s ease-in-out;
 }
 
+.p-image-preview-indicator {
+  background-color: transparent;
+}
+.p-image-preview-icon {
+  color: #FAF9F6;
+}
 /* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
