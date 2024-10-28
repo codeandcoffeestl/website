@@ -90,7 +90,7 @@ const Footer = () => {
                     <a href='#'>
                         <img 
                             alt="logo" 
-                            src="../../public/code&coffee-original.png" 
+                            src="../../../../public/code&coffee-original.png" 
                             width="100" 
                             className="mb-2 mr-4 ml-[20px] h-12 w-30 md:h-20 md:w-48" 
                         />

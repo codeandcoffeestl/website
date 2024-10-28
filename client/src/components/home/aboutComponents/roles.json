@@ -26,5 +26,12 @@
         "roleUrl": "https://www.linkedin.com/in/mika-zukeyama/",
         "roleImage": "/Mika-Zukeyama.jpeg",
         "roleDescription": "Hi! I'm Mika, an enthusiastic learner and aspiring web developer. I thrive on the challenge of turning ideas into real-world projects and continuously improving my skills. \nLet's create something amazing together!"
+    },
+        {
+        "contributorName": "Ian Weinholtz",
+        "roleName": "Software Engineer (Volunteer)",
+        "roleUrl": "https://www.linkedin.com/in/ian-weinholtz/",
+        "roleImage": "/Ian-Weinholtz.jpeg",
+        "roleDescription": "I am Software Engineer passionate about data caching and building scalable applications with TypeScript, React, Node.js, GraphQL, and NoSQL. Iterator on Quell, an open-source GraphQL caching library for front-end and back-end applications."
     }
 ]
