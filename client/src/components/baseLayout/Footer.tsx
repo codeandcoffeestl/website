@@ -67,9 +67,9 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-PrimaryColor flex  justify-between items-center p-4 text-WAccentColor">
+        <footer className="bg-SecondaryColor flex  justify-between items-center p-4 text-WAccentColor">
             <TieredMenu
-                className="bg-PrimaryColor"
+                className="bg-SecondaryColor"
                 model={items}
             />
             <div className="flex-grow">
@@ -84,7 +84,7 @@ const Footer = () => {
                 ))}
             </div>
             
-            <div className="bg-PrimaryColor text-WAccentColor">
+            <div className="bg-SecondaryColor text-WAccentColor">
                 <br />
                 <div className="flex flex-col items-end">
                     <a href='#'>

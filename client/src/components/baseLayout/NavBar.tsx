@@ -6,7 +6,7 @@ const NavBar = () => {
     const navigate = useNavigate();
 
     const itemRenderer = (item: MenuItem) => (
-        <a className="p-menuitem-link text-white bg-PrimaryColor flex items-center lg:w-auto w-36 float-right">
+        <a className="p-menuitem-link text-white bg-SecondaryColor flex items-center lg:w-auto w-36 float-right">
             <span className='mx-2' >{item.label}</span>
         </a>
     );
@@ -42,24 +42,15 @@ const NavBar = () => {
             command: handleClick('contact'),
             template: itemRenderer,
         },
-        {
-            // This is a demo of how to implement navigation when building additional pages
-            id: "Nav4",
-            label: 'StyleDemo',
-            command: () => navigate('stylesample'),
-            template: itemRenderer,
-
-
-        }
     ];
 
 
 
     return (
-        <div className="flex items-center justify-between bg-PrimaryColor pt-2 pb-2 pl-2 ">
+        <div className="flex items-center justify-between bg-SecondaryColor pt-2 pb-2 pl-2 ">
             <a onClick={() => navigate('/')}><img alt="logo" src="../../public/code&coffee-original.png" width="100" className="mr-2 ml-[27px] h-16 w-40 md:h-20 md:w-48" /></a>
             <Menubar
-                className="bg-PrimaryColor text-white"
+                className="bg-SecondaryColor text-white"
                 model={items}
             />
         </div>
