@@ -48,7 +48,9 @@ const NavBar = () => {
 
     return (
         <div className="flex items-center justify-between bg-SecondaryColor pt-2 pb-2 pl-2 ">
-            <a onClick={() => navigate('/')}><img alt="logo" src="../../public/code&coffee-original.png" width="100" className="mr-2 ml-[27px] h-16 w-40 md:h-20 md:w-48" /></a>
+            <a onClick={() => navigate('/')}><img alt="logo" src="/code&coffee-original.png" width="100"
+                                                  className="mr-2 ml-[27px] h-16 w-40 md:h-20 md:w-48"/></a>
+                <p className="text-xl font-medium text-white mt-auto">Sponsored by TechArtista Foundation</p>
             <Menubar
                 className="bg-SecondaryColor text-white"
                 model={items}
