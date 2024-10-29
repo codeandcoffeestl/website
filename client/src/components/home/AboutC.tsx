@@ -26,7 +26,7 @@ const AboutC = () => {
                 <p className="text-black mt-5 mb-4 text-center md:text-left">
                     Code and Coffee is an inclusive, informal co-working session for anyone in the tech space! 
                     People of all skill level attend, and we love it that way.
-                    Many people (optionally) bring projects ot work on, and many other people (optioonally) socialize the entire time.
+                    Many people (optionally) bring projects to work on, and many other people (optioonally) socialize the entire time.
                     It's completely up to you!
                 </p>
 

@@ -5,30 +5,25 @@ import { useState } from "react"
 import { Button } from "primereact/button"
 const images = [
     {
-        src: "https://picsum.photos/seed/img1/600/400",
-        alt: "Slide 1",
+        src: "../../public/speakers-Image/StandUps.jpg",
+        alt: "Code and Coffee stand ups",
         selected: true,
       
     },
     {
-        src: "https://picsum.photos/seed/img2/600/400",
-        alt: "Slide 2",
+        src: "../../public/speakers-Image/TechTalk.jpg",
+        alt: "Talks at Code and Coffee",
         selected: false,
         
     },   
     {
-        src: "https://picsum.photos/seed/img3/600/400",
-        alt: "Slide 3",
+        src: "../../public/speakers-Image/PizzaTime.jpg",
+        alt: "Two programmers ideating over pizza",
         selected: false,
     },
     {
-        src: "https://picsum.photos/seed/img4/600/400",
-        alt: "Slide 4",
-        selected: false,
-    },
-    {
-        src: "https://picsum.photos/seed/img5/600/400",
-        alt: "Slide 5",
+        src: "../../public/speakers-Image/CostumeParty.jpg",
+        alt: "Costume Party 10/26/24",
         selected: false,
     },
 ]
@@ -64,7 +59,7 @@ const PastSpeakersCarouselC = () => {
     }
 
     const handleRightClick = () => {
-        if (selectedSlide < 4) {
+        if (selectedSlide < images.length - 1) {
            const newSlides = slides.map((slide, i) => {
                 if (i === selectedSlide) {
                     return { ...slide, selected: false };
@@ -100,7 +95,7 @@ const PastSpeakersCarouselC = () => {
                 else hide slide
              */}
                {slides.map((slide, i) => {
-                    return slide.selected ? <Image src={slide.src} imageClassName="aspect-video" className=" z-50 flex col-start-2 row-span-full col-span-3 container justify-center items-center py-0 drop-shadow-2xl select-none" preview alt={slide.alt} key={`key-${i}a`}/> 
+                    return slide.selected ? <Image src={slide.src} imageClassName="aspect-video" className=" z-50 flex col-start-2 row-span-full col-span-3 container justify-center items-center py-0 drop-shadow-2xl select-none hover:brightness-50" preview alt={slide.alt} key={`key-${i}a`}/> 
                     : (slides[i + 1] === undefined && slides[0].selected) || (slides[i + 1] && slides[i + 1].selected ) ? 
                     <Image src={slide.src} imageClassName="aspect-video" className="flex z-10 col-start-1 container col-span-2 gap-x-0.5 row-span-full justify-center items-center drop-shadow-2xl select-none" alt={slide.alt} key={`key-${i}a`}/> 
                     : (slides[i - 1] === undefined && slides[slides.length - 1].selected) || (slides[i - 1] && slides[i - 1].selected ) ?
@@ -108,11 +103,11 @@ const PastSpeakersCarouselC = () => {
                     : <Image src={slide.src} imageClassName="aspect-video" className="z-20 col-start- col-span-3  row-span-full justify-center items-center drop-shadow-2xl hidden select-none" key={`key-${i}a`} />
                 })}      
                 
-                <Button rounded className="hover:ring-2 hover:ring-SecondaryColor place-self-center self-center z-40 col-start-1 col-span-1 row-span-full row-start-1 !bg-WAccentColor flex items-center justify-center size-10 cursor-pointer drop-shadow-lg !rounded-full" onClick={handleLeftClick} >
+                <Button rounded className="hover:ring-2 hover:border-SecondaryColor place-self-center self-center z-40 col-start-1 col-span-1 row-span-full row-start-1 !bg-WAccentColor flex items-center justify-center size-10 cursor-pointer drop-shadow-lg !rounded-full" onClick={handleLeftClick} >
                     <FontAwesomeIcon icon={faChevronLeft} className="z-50 text-4xl text-SecondaryColor drop-shadow-lg"/>
                 </Button>
                   
-                <Button rounded className=" focus-visible:animate-easeinout focus:outline-5 hover:ring-2 hover:ring-SecondaryColor place-self-center self-center z-40 col-start-5 col-span-1 row-span-full row-start-1 !bg-WAccentColor flex items-center justify-center size-10 cursor-pointer drop-shadow-lg !rounded-full" onClick={handleRightClick}>
+                <Button rounded className=" focus-visible:animate-easeinout focus:outline-5 hover:ring-2 hover:border-SecondaryColor place-self-center self-center z-40 col-start-5 col-span-1 row-span-full row-start-1 !bg-WAccentColor flex items-center justify-center size-10 cursor-pointer drop-shadow-lg !rounded-full" onClick={handleRightClick}>
                     <FontAwesomeIcon icon={faChevronRight} className="z-50 text-4xl text-SecondaryColor drop-shadow-lg"/>
                 </Button>
         
