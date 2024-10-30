@@ -14,6 +14,7 @@ export default {
         GAccentColor: "#D3D3D3",
         OHighlightColor: "#FFA500",
         YHighlightColor: "#FFD700",
+        whitesmoke: '#f5f5f5',
       },
       boxShadow: {
         'white': '0 2px 20px rgba(255, 255, 255, 1)',
@@ -21,7 +22,10 @@ export default {
       },
       flexBasis: {
         'content': 'content',
-      }
+      },
+      backgroundImage: {
+        coffeeBgImg: "url('../../src/assets/CoffeeBg.jpg')",
+      },
     },
   },
   variants: {

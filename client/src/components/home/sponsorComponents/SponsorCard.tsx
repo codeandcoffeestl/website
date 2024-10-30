@@ -9,13 +9,24 @@ interface SponsorCardProps {
 
 export const SponsorCard = ({ sponsorUrl, sponsorLogo, sponsorDescription }: SponsorCardProps) => {
     return (
-        <div className="card flex justify-content-center ">
-            <Card className="z-10 bg-PrimaryColor shadow-lg">
-                <a className="flex flex-col items-center" href={sponsorUrl}>
-                    <img className="w-32 h-auto" src={"../../src/assets/" + sponsorLogo + ".png"} alt={sponsorLogo + " Logo"} />
-                    <h2 className="text-lg text-SecondaryColor mt-2">{sponsorLogo}</h2>
+        <div className="flex justify-content-center p-0 m-4">
+            <Card className="z-10 bg-PrimaryColor shadow-lg p-0">
+                <a href={sponsorUrl} 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   className="flex flex-col items-center pb-5">
+                    <img className="w-64 h-auto p-2 bg-whitesmoke" 
+                        src={"../../src/assets/" + sponsorLogo} 
+                        alt={sponsorLogo}  
+                        style={{
+                            boxShadow: '0 0 30px rgba(255, 255, 255, 0.3)',
+                            borderRadius: '5px'
+                        }}/>
                 </a>
-                <h4 className="p-2 text-white leading-relaxed overflow-hidden">{sponsorDescription}</h4>
+                <h4 className="p-0 lg:p-3 text-white leading-relaxed overflow-hidden text-left" 
+                    style={{ fontFamily: 'var(--font-family)' }}>
+                    {sponsorDescription}
+                </h4>
             </Card>
         </div>
     );
