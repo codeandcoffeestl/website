@@ -16,7 +16,7 @@ export const SponsorCard = ({ sponsorUrl, sponsorLogo, sponsorDescription }: Spo
                    rel="noopener noreferrer" 
                    className="flex flex-col items-center pb-5">
                     <img className="w-64 h-auto p-2 bg-whitesmoke" 
-                        src={"../../src/assets/" + sponsorLogo} 
+                        src={"../../src/assets/sponsor-logos/" + sponsorLogo} 
                         alt={sponsorLogo}  
                         style={{
                             boxShadow: '0 0 30px rgba(255, 255, 255, 0.3)',
