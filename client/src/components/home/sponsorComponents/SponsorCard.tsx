@@ -9,8 +9,8 @@ interface SponsorCardProps {
 
 export const SponsorCard = ({ sponsorUrl, sponsorLogo, sponsorDescription }: SponsorCardProps) => {
     return (
-        <div className="flex justify-content-center p-0 m-4">
-            <Card className="z-10 bg-PrimaryColor shadow-lg p-0">
+        <div className="flex justify-content-center p-0 m-4 font-sans">
+            <Card className="z-10 bg-PrimaryColor shadow-lg p-0 font-sans">
                 <a href={sponsorUrl} 
                    target="_blank" 
                    rel="noopener noreferrer" 
@@ -23,8 +23,7 @@ export const SponsorCard = ({ sponsorUrl, sponsorLogo, sponsorDescription }: Spo
                             borderRadius: '5px'
                         }}/>
                 </a>
-                <h4 className="p-0 lg:p-3 text-white leading-relaxed overflow-hidden text-left" 
-                    style={{ fontFamily: 'var(--font-family)' }}>
+                <h4 className="p-0 lg:p-3 text-white leading-relaxed overflow-hidden text-left">
                     {sponsorDescription}
                 </h4>
             </Card>

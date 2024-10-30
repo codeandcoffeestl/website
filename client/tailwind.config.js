@@ -16,6 +16,9 @@ export default {
         YHighlightColor: "#FFD700",
         whitesmoke: '#f5f5f5',
       },
+      fontFamily: {
+        sans: ['Avenir', 'Helvetica', 'Arial', 'sans-serif', 'RocknRoll One'],
+      },
       boxShadow: {
         'white': '0 2px 20px rgba(255, 255, 255, 1)',
         'white-lg': '0 2px 20px rgba(255, 255, 255, 1)',  

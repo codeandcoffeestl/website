@@ -14,7 +14,7 @@ interface RoleCardProps {
 export const RolesCard: React.FC<RoleCardProps> = ({ contributorName, roleName, roleUrl, roleImage, roleDescription }) => {
     return (
         <div className="w-full p-2">
-            <div className="relative w-full rounded-lg p-4 overflow-hidden bg-SecondaryColor/30 shadow-lg" style={{ fontFamily: 'var(--font-family)' }}>
+            <div className="relative w-full rounded-lg p-4 overflow-hidden bg-SecondaryColor/30 shadow-lg font-sans">
                 <div className="absolute inset-0 top-1/5 bg-SecondaryColor/50" style={{ borderTopLeftRadius: '100%' }}></div>
                 <div className="relative z-10 flex justify-between items-center pl-5 pr-5 text-left">
                     <div className="flex flex-col">
