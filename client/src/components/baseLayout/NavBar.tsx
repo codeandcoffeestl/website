@@ -47,15 +47,46 @@ const NavBar = () => {
 
 
     return (
-        <div className="flex items-center justify-between bg-SecondaryColor pt-2 pb-2 pl-2 ">
-            <a onClick={() => navigate('/')}><img alt="logo" src="/code&coffee-original.png" width="100"
-                                                  className="mr-2 ml-[27px] h-16 w-40 md:h-20 md:w-48"/></a>
-                <p className="text-xl font-medium text-white mt-auto">Sponsored by TechArtista Foundation</p>
+        <div className="flex
+                        items-center
+                        justify-between
+                        bg-SecondaryColor
+                        pt-2
+                        pb-2
+                        pl-2
+                        flex-col
+                        md:flex-row">
+            <a onClick={() => navigate('/')}
+               className="order-1
+                          md:order-none mb-2 md:mb-0">
+                <img
+                    alt="logo"
+                    src="/code&coffee-original.png"
+                    className="h-16  md:h-20
+                               w-40 md:w-48
+                               mr-0 md:mr-2
+                               ml-0 md:ml-[27px]"
+                />
+            </a>
+
+            <p className="text-sm sm:text-base md:text-lg lg:text-2xl
+                            font-medium
+                            text-white
+                            text-center
+                            md:text-left
+                            order-2
+                            mt-auto">
+                Sponsored by TechArtista Foundation
+            </p>
+
             <Menubar
-                className="bg-SecondaryColor text-white"
+                className="bg-SecondaryColor
+                            text-white
+                            order-3"
                 model={items}
             />
         </div>
+
     )
 }
 

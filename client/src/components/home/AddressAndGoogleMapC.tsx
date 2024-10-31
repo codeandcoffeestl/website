@@ -11,44 +11,54 @@ const AddressAndGoogleMapC = () => {
                             flex-col md:flex-row
                             justify-between
                             items-center">
+
             <Card className="bg-GAccentColor
-                 text-PrimaryColor
-                 m-4 sm:m-8 md:m-10
-                 w-full max-w-[568px]
-                 h-[250px] sm:h-[363px]
-                 p-6 sm:p-8">
+                            text-PrimaryColor
+                            m-4 sm:m-8 md:m-10
+                            w-full max-w-[568px]
+                            h-auto sm:h-[363px] p-6 sm:p-8
+                            flex
+                            flex-col
+                            justify-start">
 
                 <div className="flex
-                    items-center
-                    justify-center
-                    pb-3">
-                    <FontAwesomeIcon icon={faLocationDot}
-                                     className="text-OHighlightColor
-                                    text-2xl sm:text-3xl
-                                    pr-2" />
-                    <p className="text-2xl sm:text-3xl md:text-4xl
-                     font-bold">
+                                items-center
+                                justify-center
+                                pb-3
+                                text-center">
+                    <FontAwesomeIcon
+                        icon={faLocationDot}
+                        className="text-OHighlightColor
+                                    text-xl sm:text-2xl md:text-3xl
+                                    pr-2"
+                    />
+                    <p className="text-xl sm:text-2xl md:text-3xl
+                                    font-bold
+                                    break-words">
                         TechArtista UCity
                     </p>
                 </div>
 
-                <div className="border-b-2 sm:border-b-4
-                    border-dashed
-                    border-SecondaryColor">
+                <div className="border-b-2 sm:border-b-4 border-dashed border-SecondaryColor">
                     <p className="pb-4
-                     text-base sm:text-lg md:text-xl
-                     text-black">
+                                    text-sm sm:text-base md:text-lg
+                                    text-black
+                                    text-center
+                                    break-words">
                         725 Kingsland Ave Suite 100 <br />
                         University City, MO 63130
                     </p>
                 </div>
 
                 <p className="pt-4
-                 text-base sm:text-lg md:text-xl
-                 text-black">
+                            text-sm sm:text-base md:text-lg
+                            text-black
+                            text-center
+                            break-words">
                     We meet on Sundays, bi-weekly at TechArtista UCity from 12:00 - 3:00pm
                 </p>
             </Card>
+
 
             <Map
                 defaultCenter={{ lat: 38.658276, lng: -90.309074 }}

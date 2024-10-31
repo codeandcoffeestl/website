@@ -28,7 +28,7 @@ const AboutC = () => {
                 </p>
 
                 <Button 
-                    label="Contributes List >>"
+                    label="Contributors List >>"
                     onClick={handlePopupToggle}
                 />
                 <RolesPopup trigger={showPopup} closePopup={closePopup}>
