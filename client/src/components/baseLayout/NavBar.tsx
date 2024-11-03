@@ -6,8 +6,17 @@ const NavBar = () => {
     const navigate = useNavigate();
 
     const itemRenderer = (item: MenuItem) => (
-        <a className="p-menuitem-link text-white bg-SecondaryColor flex items-center lg:w-auto w-36 float-right">
-            <span className='mx-2' >{item.label}</span>
+        <a className="p-menuitem-link
+                       text-white
+                       bg-SecondaryColor
+                       flex
+                       items-center
+                       float-right
+                       w-full
+                       md:w-36
+                       lg:w-auto
+                       justify-center">
+            <span className='mx-2'>{item.label}</span>
         </a>
     );
 
@@ -55,7 +64,8 @@ const NavBar = () => {
                         pb-2
                         pl-2
                         flex-col
-                        md:flex-row">
+                        md:flex-row
+                       ">
             <a onClick={() => navigate('/')}
                className="order-1
                           md:order-none mb-2 md:mb-0">
@@ -78,16 +88,24 @@ const NavBar = () => {
                             mt-auto">
                 Sponsored by TechArtista Foundation
             </p>
-
-            <Menubar
-                className="bg-SecondaryColor
+            <div className="order-3
+                            flex
+                            flex-col
+                            items-center
+                            w-full
+                            md:w-auto">
+                <Menubar
+                    className="bg-SecondaryColor
                             text-white
-                            order-3"
-                model={items}
-            />
-        </div>
+                            order-3
+                            w-full
+                            text-center"
+                    model={items}
+                />
+            </div>
+            </div>
 
-    )
-}
+            )
+            }
 
-export default NavBar
+            export default NavBar

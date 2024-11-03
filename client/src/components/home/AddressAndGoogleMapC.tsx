@@ -9,7 +9,8 @@ const AddressAndGoogleMapC = () => {
         <section className="bg-SecondaryColor 
                             flex
                             flex-col md:flex-row
-                            justify-between
+                            justify-center
+                            gap-6
                             items-center">
 
             <Card className="bg-GAccentColor
