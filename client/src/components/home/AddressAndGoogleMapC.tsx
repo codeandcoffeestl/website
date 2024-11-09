@@ -1,5 +1,4 @@
 import { Card } from "primereact/card"
-import { Map, Marker } from '@vis.gl/react-google-maps';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
@@ -60,22 +59,18 @@ const AddressAndGoogleMapC = () => {
                 </p>
             </Card>
 
-
-            <Map
-                defaultCenter={{ lat: 38.658276, lng: -90.309074 }}
-                defaultZoom={15}
-                gestureHandling={'cooperative'}
-                disableDefaultUI={true}
-                className="rounded-lg
-                mx-4 my-6 sm:my-8
-                w-full max-w-[568px]
-                h-[250px] sm:h-[363px]
-                border-4
-                border-GAccentColor"
-            >
-                <Marker position={{ lat: 38.658276, lng: -90.309074 }} />
-            </Map>
-
+                <iframe
+                    className="w-full
+                            h-[250px] sm:h-[363px]
+                            rounded-lg
+                            mx-4
+                            my-6 sm:my-8
+                            w-full max-w-[568px]
+                            border-4"
+                    loading="lazy"
+                    allowFullScreen
+                    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ_b-T_1E134cRWHsfz8jr1eM&key=AIzaSyCSJQjxravXyS4kBvzuKECOV1QbCt1lKOg">
+                </iframe>
 
         </section >
     )

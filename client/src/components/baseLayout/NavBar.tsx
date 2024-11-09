@@ -82,10 +82,10 @@ const NavBar = () => {
             <p className="text-sm sm:text-base md:text-lg lg:text-2xl
                             font-medium
                             text-white
-                            text-center
                             md:text-left
                             order-2
-                            mt-auto">
+                            align-middle
+                            ">
                 Sponsored by TechArtista Foundation
             </p>
             <div className="order-3
