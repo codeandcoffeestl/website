@@ -15,9 +15,8 @@ export default function ContactUsC() {
                     width="740"
                     height="776"
                     className='opacity-90'
-                    frameborder="0"
-                    marginheight="0"
-                    marginwidth="0">Loading…</iframe>
+
+                >Loading…</iframe>
             </div>
         </div >
     )
