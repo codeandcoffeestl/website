@@ -1,5 +1,6 @@
 :root {
   font-family: Avenir, Helvetica, Arial, sans-serif, RocknRoll One;
+  /* RocknRoll One, Avenir, Helvetica, Arial, sans-serif */
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -19,10 +20,11 @@ a {
   font-weight: 500;
   color: #FAF9F6;
   text-decoration: inherit;
-  background-color: #4B2E17;
+  cursor: pointer;
 }
 a:hover {
   color: #FFA500;
+  background-color: #17A2B8;
 }
 
 /* body {
@@ -113,10 +115,43 @@ button:focus-visible {
     background-color: #FAF9F6;
   }
   a:hover {
-    background-color: #4B2E17;
+    background-color: #17A2B8;
     color: #FFA500;
   }
   button {
     background-color: #FFA500;
   }
+}
+
+.button-wrapper {
+  width: 200px;
+}
+
+.sponsor-logo-hover {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sponsor-logo-hover:hover {
+  background-color: var(--PrimaryColor);
+}
+
+.p-card-content {
+  padding-top: 1rem !important;
+  padding-bottom: 0 !important;
+}
+
+@keyframes softAura {
+  0% {
+      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.soft-aura {
+  animation: softAura 6s infinite ease-in-out;
 }
