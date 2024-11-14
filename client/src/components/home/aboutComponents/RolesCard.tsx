@@ -14,15 +14,19 @@ interface RoleCardProps {
 export const RolesCard: React.FC<RoleCardProps> = ({ contributorName, roleName, roleUrl, roleImage, roleDescription }) => {
     return (
         <div className="w-full p-2">
-            <div className="relative w-full rounded-lg p-4 overflow-hidden bg-SecondaryColor/30 shadow-lg">
+            <div className="relative w-full rounded-lg p-4 overflow-hidden bg-SecondaryColor/30 shadow-lg font-sans">
                 <div className="absolute inset-0 top-1/5 bg-SecondaryColor/50" style={{ borderTopLeftRadius: '100%' }}></div>
                 <div className="relative z-10 flex justify-between items-center pl-5 pr-5 text-left">
                     <div className="flex flex-col">
                         <h2 className="text-xl text-black font-bold">{contributorName}</h2>
                         <h4 className="text-black">Role: {roleName}</h4>
 
-                        <a href={roleUrl} className="text-lg cursor-pointer flex items-center hover:text-shadow-none hover:font-bold" 
-                                style={{ background: 'transparent' }}>
+                        <a href={roleUrl} 
+                            className="text-lg cursor-pointer flex items-center hover:text-shadow-none hover:font-bold" 
+                            style={{ background: 'transparent' }}
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                        >
                             <FontAwesomeIcon icon={faUserGroup} className="text-OHighlightColor fa-md pr-2" />
                             <h4 style={{ textShadow: '2px 2px 2px rgba(0,0,0,0.2)', boxShadow: 'none'}} 
                               onMouseEnter={(e) => {

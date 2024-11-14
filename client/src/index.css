@@ -24,6 +24,7 @@ a {
 }
 a:hover {
   color: #FFA500;
+  background-color: #17A2B8;
 }
 
 /* body {
@@ -102,4 +103,33 @@ button:focus-visible {
 
 .button-wrapper {
   width: 200px;
+}
+
+.sponsor-logo-hover {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sponsor-logo-hover:hover {
+  background-color: var(--PrimaryColor);
+}
+
+.p-card-content {
+  padding-top: 1rem !important;
+  padding-bottom: 0 !important;
+}
+
+@keyframes softAura {
+  0% {
+      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.soft-aura {
+  animation: softAura 6s infinite ease-in-out;
 }
