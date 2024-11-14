@@ -5,24 +5,24 @@ import { useState } from "react"
 import { Button } from "primereact/button"
 const images = [
     {
-        src: "../../public/speakers-Image/StandUps.jpg",
+        src: "/speakers-Image/StandUps.jpg",
         alt: "Code and Coffee stand ups",
         selected: true,
       
     },
     {
-        src: "../../public/speakers-Image/TechTalk.jpg",
+        src: "/speakers-Image/TechTalk.jpg",
         alt: "Talks at Code and Coffee",
         selected: false,
         
     },   
     {
-        src: "../../public/speakers-Image/PizzaTime.jpg",
+        src: "/speakers-Image/PizzaTime.jpg",
         alt: "Two programmers ideating over pizza",
         selected: false,
     },
     {
-        src: "../../public/speakers-Image/CostumeParty.jpg",
+        src: "/speakers-Image/CostumeParty.jpg",
         alt: "Costume Party 10/26/24",
         selected: false,
     },
@@ -95,12 +95,12 @@ const PastSpeakersCarouselC = () => {
                 else hide slide
              */}
                {slides.map((slide, i) => {
-                    return slide.selected ? <Image src={slide.src} imageClassName="aspect-video" className=" z-50 flex col-start-2 row-span-full col-span-3 container justify-center items-center py-0 drop-shadow-2xl select-none hover:brightness-50" preview alt={slide.alt} key={`key-${i}a`}/> 
+                    return slide.selected ? <Image src={slide.src} imageClassName="aspect-auto" className=" z-50 flex col-start-2 row-span-full col-span-3 container justify-center items-center py-0 select-none " preview alt={slide.alt} key={`key-${i}a`}/> 
                     : (slides[i + 1] === undefined && slides[0].selected) || (slides[i + 1] && slides[i + 1].selected ) ? 
-                    <Image src={slide.src} imageClassName="aspect-video" className="flex z-10 col-start-1 container col-span-2 gap-x-0.5 row-span-full justify-center items-center drop-shadow-2xl select-none" alt={slide.alt} key={`key-${i}a`}/> 
+                    <Image src={slide.src} imageClassName="aspect-auto" className="flex z-10 col-start-1 container col-span-2 gap-x-0.5 row-span-full justify-center items-center drop-shadow-2xl select-none" alt={slide.alt} key={`key-${i}a`}/> 
                     : (slides[i - 1] === undefined && slides[slides.length - 1].selected) || (slides[i - 1] && slides[i - 1].selected ) ?
-                    <Image src={slide.src} imageClassName="aspect-video" className="flex z-20 col-start-4 col-span-3  row-span-full justify-center items-center drop-shadow-2xl select-none" key={`key-${i}a`}/> 
-                    : <Image src={slide.src} imageClassName="aspect-video" className="z-20 col-start- col-span-3  row-span-full justify-center items-center drop-shadow-2xl hidden select-none" key={`key-${i}a`} />
+                    <Image src={slide.src} imageClassName="aspect-auto" className="flex z-20 col-start-4 col-span-3  row-span-full justify-center items-center drop-shadow-2xl select-none" key={`key-${i}a`}/> 
+                    : <Image src={slide.src} className="z-20 col-start- col-span-3  row-span-full justify-center items-center drop-shadow-2xl hidden select-none" key={`key-${i}a`} />
                 })}      
                 
                 <Button rounded className="hover:ring-2 hover:border-SecondaryColor place-self-center self-center z-40 col-start-1 col-span-1 row-span-full row-start-1 !bg-WAccentColor flex items-center justify-center size-10 cursor-pointer drop-shadow-lg !rounded-full" onClick={handleLeftClick} >

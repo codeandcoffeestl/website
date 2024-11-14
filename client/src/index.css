@@ -83,17 +83,25 @@ button:hover {
   background-color: transparent;
   
 }
+
+.p-image-preview-indicator:hover {
+  border-color: transparent;
+}
+
 .p-image-preview-icon {
   color: #FAF9F6;
 }
+
 .p-image-action {
   background-color: transparent;
   color: #FAF9F6;
   padding: 0%;
 }
+
 .p-image-action:hover {
   border-color: transparent;
 }
+
 /* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
