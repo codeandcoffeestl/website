@@ -34,18 +34,24 @@ const AboutC = () => {
                 <p className="text-black mt-5 mb-4 text-center md:text-left">
                     Code & Coffee - STL is a meetup that focuses on building the St. Louis development community in ways that put our members and their interests first. Whether a student, highly experienced professional or tech entrepreneur, we create opportunities for our members to network, gain access to mentorship and collaborate to push their individual and collective projects forward. We address the need to keep up with the rapid advancements in technology by supporting the people in their businesses, industries and careers.
                 </p>
-            <div className="flex justify-center gap-6 flex-col sm:flex-row mb-0">
-                <Button
-                    className="p2"
-                    label="Contributors List"
+
+                <div className="flex justify-center items-center gap-2 flex-col sm:flex-row mb-0">
+                    <div className="button-wrapper">
+                        <Button
+                            className="p2"
+                            label="Contributors List"
                     onClick={()=>handlePopupToggle("role")}
-                />
-                <Button
-                    className="p2"
-                    label="Member Benefits"
+                        />
+                    </div>
+                    <div className="button-wrapper">
+                        <Button
+                            className="p2"
+                            label="Member Benefits"
                     onClick={()=>handlePopupToggle("benefits")}
-                />
-            </div>
+                        />
+                    </div>
+                </div>               
+                
                 <RolesPopup trigger={showRolesPopup} closePopup={closeRolesPopup}>
                     <div className="flex flex-col w-full"  style={{ paddingLeft: '1.2rem', paddingRight: '1.2rem' }}>
                         <h2 className="text-black text-3xl font-bold mb-1 text-center md:text-left">

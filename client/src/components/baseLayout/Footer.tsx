@@ -90,6 +90,7 @@ const Footer = () => {
                 <br />
                 <div className="flex flex-col items-end">
                     <a href='#'>
+
                         <img
                             alt="logo"
                             src="/code&coffee-original.png"

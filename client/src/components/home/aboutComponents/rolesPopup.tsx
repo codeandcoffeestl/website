@@ -30,11 +30,13 @@ const RolesPopup: React.FC<RolesPopupProps> = ({trigger, closePopup, children}) 
 
     return trigger ? (
         <div className="rolesPopup fixed top-0 left-0 w-full h-screen bg-black/40 flex justify-center items-center z-50">
-            <div className="popup-inner bg-WAccentColor rounded-lg shadow-lg pt-10 pr-8 pb-4 pl-8 max-w-6xl w-full max-h-[80vh] mx-4 md:mx-8 flex flex-col items-center md:w-700 lg:w-700 xl:w-full basis-content">
+            <div className="popup-inner bg-WAccentColor rounded-lg shadow-lg 
+                            pt-10 pb-4 max-w-[90vw] sm:max-w-[700px] sm:items-center lg:max-w-[900px] 
+                            xl:max-w-6xl mx-auto sm:mx-7 flex flex-col items-end sm:ml-0 ml-0 sm:mr-0 mr-0">
                { children }
 
                <div className="overflow-auto max-h-[calc(100vh-345px)] p-2">
-                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4">
                             {roles.map((role, index) => (
                                  <div className="w-full max-w-xl">
                                 <RolesCard
@@ -50,8 +52,8 @@ const RolesPopup: React.FC<RolesPopupProps> = ({trigger, closePopup, children}) 
                     </div>
                 </div>
                 <Button 
-                    label="close" 
-                    className="close-btn mt-4" 
+                    label="Close" 
+                    className="close-btn mt-4 self-center" 
                     onClick={closePopup}
                 />
             </div>
