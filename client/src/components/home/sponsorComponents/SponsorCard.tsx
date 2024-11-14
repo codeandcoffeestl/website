@@ -14,12 +14,12 @@ export const SponsorCard = ({ sponsorUrl, sponsorLogo, sponsorDescription }: Spo
                 <a href={sponsorUrl} 
                    target="_blank" 
                    rel="noopener noreferrer" 
-                   className="flex flex-col items-center pb-5">
-                    <img className="w-64 h-auto p-2 bg-whitesmoke" 
-                        src={"../../src/assets/sponsor-logos/" + sponsorLogo} 
+                   className="flex flex-col items-center pb-5 sponsor-logo-hover">
+                    <img className="w-64 h-auto p-2 bg-whitesmoke soft-aura" 
+                        src={"/sponsor-logos/" + sponsorLogo} 
                         alt={sponsorLogo}  
                         style={{
-                            boxShadow: '0 0 30px rgba(255, 255, 255, 0.3)',
+                            // boxShadow: '0 0 30px rgba(255, 255, 255, 0.3)',
                             borderRadius: '5px'
                         }}/>
                 </a>

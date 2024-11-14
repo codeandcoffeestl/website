@@ -4,6 +4,7 @@ import { faHandshake } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "primereact/button";
 import sponsorsData from './sponsorComponents/sponsors.json';
 import { useState, useEffect } from "react";
+import backgroundImage from '../../assets/CoffeeBg.jpg';
 
 export interface ISponsorCard {
   sponsorUrl: string
@@ -28,7 +29,9 @@ const OurSponsorsC = () => {
   };
  
   return (
-    <div className="card relative bg-contain bg-center bg-coffeeBgImg h-auto min-h-screen">
+    <div className="card relative bg-contain bg-center h-auto min-h-screen" style={{
+      backgroundImage: `url(${backgroundImage})`,
+  }}>
       <div className="absolute inset-0 bg-gray-200 bg-opacity-80 z-0"></div>
 
       <div className="container mx-auto md:px-8 lg:px-12 md:pt-10 lg:pt-16 lg:pb-10">
