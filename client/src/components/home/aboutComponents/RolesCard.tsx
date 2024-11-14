@@ -38,7 +38,7 @@ export const RolesCard: React.FC<RoleCardProps> = ({ contributorName, roleName, 
                         </a>
                     </div>
                     <img className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-SecondaryColor rounded-full object-cover"
-                        src={"../../../../public/roles-Image/" + roleImage} alt={contributorName + " roleImage"} />
+                        src={"/roles-Image" + roleImage} alt={contributorName + " roleImage"} />
                 </div>
                 <div className="relative z-10 mt-4 pl-5 md:pb-3 text-left">
                     <p className="text-black leading-relaxed overflow-hidden">

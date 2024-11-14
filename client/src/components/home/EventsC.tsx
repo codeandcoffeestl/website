@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
 import { Key, useEffect, useState } from "react";
 import IEvent from "../../interfaces/IEvent";
+import backgroundImage from '../../assets/CoffeeBg.jpg';
 
 const EventsC = () => {
     const [data, setData] = useState<IEvent[] | undefined>(undefined);
@@ -45,7 +46,9 @@ const EventsC = () => {
     return (
         <div id="events" >
 
-            <div className="card relative bg-cover bg-center bg-coffeeBgImg">
+            <div className="card relative bg-cover bg-center"  style={{
+                backgroundImage: `url(${backgroundImage})`,
+            }}>
                 <div className="absolute inset-0 bg-gray-200 bg-opacity-70 z-0"></div>
 
                 <div className="flex flex-col md:flex-row justify-between items-center pt-10 pb-5 mb-3">

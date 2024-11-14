@@ -52,7 +52,7 @@ const RolesPopup: React.FC<RolesPopupProps> = ({trigger, closePopup, children}) 
                     </div>
                 </div>
                 <Button 
-                    label="close" 
+                    label="Close" 
                     className="close-btn mt-4 self-center" 
                     onClick={closePopup}
                 />
