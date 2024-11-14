@@ -121,7 +121,7 @@ button:focus-visible {
 }
 
 .box {
-  background: linear-gradient(-5deg, #17A2B8, #aaf4ff, #aaf4ff);
+  background: linear-gradient(-5deg, #17A2B8, #e5fcff, #aaf4ff);
 }
 
 .scroll-up-button button {
