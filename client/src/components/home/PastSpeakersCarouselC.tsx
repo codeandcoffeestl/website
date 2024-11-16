@@ -64,7 +64,6 @@ const PastSpeakersCarouselC = () => {
                 if (i === selectedSlide) {
                     return { ...slide, selected: false };
                 } else if (i === selectedSlide + 1) {
-                    console.log(selectedSlide + 1)
                     return { ...slide, selected: true };
                 }
                 return slide;
