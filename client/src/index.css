@@ -17,6 +17,7 @@
 }
 
 a {
+  font-family: Avenir, Helvetica, Arial, sans-serif, RocknRoll One;
   font-weight: 500;
   color: #FAF9F6;
   text-decoration: inherit;
@@ -129,6 +130,7 @@ button:focus-visible {
 
 .sponsor-logo-hover {
   transition: background-color 0.2s ease-in-out;
+  overflow: visible; 
 }
 
 .sponsor-logo-hover:hover {
@@ -140,18 +142,23 @@ button:focus-visible {
   padding-bottom: 0 !important;
 }
 
-@keyframes softAura {
-  0% {
-      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
-  }
-  50% {
-      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.4);
-  }
-  100% {
-      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
-  }
+.box {
+  background: linear-gradient(-5deg, #17A2B8, #e5fcff, #aaf4ff);
 }
 
-.soft-aura {
-  animation: softAura 6s infinite ease-in-out;
+.scroll-up-button button {
+  width: 50px;
+  height: 50px;   
+  background-color: #ffa6008c;
+  border: 1px solid #FFA500;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 24px;
+  align-Items: "center";
+  justify-content: "center";
+}
+
+.scroll-up-button button:hover {
+  background-color: #FFA500;
 }

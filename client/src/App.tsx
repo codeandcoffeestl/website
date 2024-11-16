@@ -3,14 +3,15 @@ import './assets/custom-theme/tailwind-custom/theme.scss';
 import { Routes, Route } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
 
   return (
-    <Routes>
+    <><Routes>
       <Route path="/" element={<HomePage />}></Route>
       <Route path="*" element={<ErrorPage />}></Route>
-    </Routes>
+    </Routes><ScrollToTopButton /></>
   );
 }
 
