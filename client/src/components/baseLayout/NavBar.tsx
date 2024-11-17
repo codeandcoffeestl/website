@@ -11,12 +11,13 @@ const NavBar = () => {
                        bg-SecondaryColor
                        flex
                        items-center
+                       justify-center
                        float-right
-                       w-full
-                       md:w-36
-                       lg:w-auto
-                       justify-center">
-            <span className='mx-2'>{item.label}</span>
+                       w-screen
+                       px-4 py-2
+                       lg:w-auto md:w-36
+                       ">
+            <span className="mx-2">{item.label}</span>
         </a>
     );
 
@@ -34,78 +35,79 @@ const NavBar = () => {
     const items: MenuItem[] = [
         {
             id: "Nav1",
-            label: 'About',
-            command: handleClick('about'),
+            label: "About",
+            command: handleClick("about"),
             template: itemRenderer,
         },
         {
             id: "Nav2",
-            label: 'Events',
-            command: handleClick('events')
-            ,
+            label: "Events",
+            command: handleClick("events"),
             template: itemRenderer,
         },
         {
             id: "Nav3",
-            label: 'Contact',
-            command: handleClick('contact'),
+            label: "Contact",
+            command: handleClick("contact"),
             template: itemRenderer,
         },
     ];
-
-
 
     return (
         <div className="flex
                         items-center
                         justify-between
                         bg-SecondaryColor
-                        pt-2
-                        pb-2
-                        pl-2
-                        flex-col
-                        md:flex-row
-                       ">
-            <a onClick={() => navigate('/')}
-               className="order-1
-                          md:order-none mb-2 md:mb-0">
+                        py-2
+                        px-4
+                        text-center">
+
+            <a
+                onClick={() => navigate("/")}
+                className="order-1 mb-0"
+            >
                 <img
                     alt="logo"
                     src="/code&coffee-original.png"
-                    className="h-16  md:h-20
-                               w-40 md:w-48
-                               mr-0 md:mr-2
-                               ml-0 md:ml-[27px]"
+                    className="h-auto
+                                w-[80px] sm:w-[120px]
+                                md:w-[150px] lg:w-[200px]
+                                min-w-[120px]
+                                max-w-full
+                                mr-0 md:mr-2
+                                ml-0 md:ml-[27px]"
+
                 />
             </a>
 
             <p className="text-sm sm:text-base md:text-lg lg:text-2xl
                             font-medium
                             text-white
-                            md:text-left
                             order-2
-                            align-middle
-                            ">
+                            mx-4">
                 Sponsored by TechArtista Foundation
             </p>
+
             <div className="order-3
                             flex
-                            flex-col
                             items-center
-                            w-full
-                            md:w-auto">
+                            mx-4">
                 <Menubar
                     className="bg-SecondaryColor
                             text-white
-                            order-3
-                            w-full
                             text-center"
                     model={items}
                 />
             </div>
-            </div>
+        </div>
+    );
+};
 
-            )
-            }
+export default NavBar;
 
-            export default NavBar
+
+// {/*"h-auto*/}
+// {/*            w-[150px] sm:w-[180px]*/}
+// {/*            md:w-[200px] lg:w-[200px]*/}
+// {/*            max-w-full*/}
+// {/*            mr-4"
