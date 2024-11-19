@@ -121,7 +121,7 @@ button:focus-visible {
 }
 
 .box {
-  background: linear-gradient(-5deg, #17A2B8, #e5fcff, #baf6ff);
+  background: linear-gradient(-7deg, #17a2b8, #e5fcff 36.97%, #baf6ff 40.34%);
 }
 
 .scroll-up-button button {
@@ -153,9 +153,10 @@ button:focus-visible {
 }
 
 .sponsor-card {
+  position: relative;
   opacity: 0;
   transform: translateY(100px); 
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .sponsor-card.fade-in-up {
@@ -163,17 +164,63 @@ button:focus-visible {
   transform: translateY(0);
 }
 
-@keyframes slideLeft {
-  from {
-      transform: translateX(0%);
-  }
-  to {
-      transform: translateX(100%); 
-  }
-}
 .carousel-track {
   display: flex;
-  gap: 20px;
-  animation: slideLeft 20s linear infinite;
+  width: 100%;
+  --gap: 20px;
+  gap: var(--gap);
+  padding-block: 2rem;
+  overflow: hidden;
+  justify-content: center;
+  margin: 0 auto;
+  left: 0;
+  right:0;
+  /* background-color: #2ba6b9; */
 }
 
+.small-screen {
+  flex-shrink: 0;
+  width: 250px;
+  height: auto; 
+  border-radius: 5px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+  margin: 0 auto;
+  animation: slideRight 35s linear infinite;
+}
+
+.small-screen img {
+  width: 90%;
+}
+
+.small-screen h4 {
+  line-height: 1.4;
+}
+
+
+@media (max-width: 768px) {
+  .carousel-container {
+    padding: 3rem 0; 
+  }
+
+  .container {
+    max-width: none;
+  }
+}
+
+
+@keyframes slideRight {
+  /* 0% {
+    transform: translateX(calc(-300% - 20px));
+  }
+  100% {
+    transform: translateX(calc(350% - 20px));
+  } */
+
+  0% {
+    transform: translateX(calc(350% - 20px));
+  }
+  100% {
+    transform: translateX(calc(-300% - 20px));
+  }
+
+}

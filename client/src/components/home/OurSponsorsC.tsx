@@ -41,9 +41,11 @@ const OurSponsorsC = () => {
   };
  
   return (
-    <div className="card relative bg-contain bg-center h-auto min-h-screen" style={{
+    <div className="card relative carousel-container bg-contain bg-center h-auto min-h-screen"
+      style={{
       backgroundImage: `url(${backgroundImage})`,
-  }}>
+      }}
+    >
       <div className="absolute inset-0 bg-gray-200 bg-opacity-80 z-0"></div>
 
       <div className="container mx-auto md:px-8 lg:px-12 md:pt-10 lg:pt-16 lg:pb-10">
@@ -70,16 +72,17 @@ const OurSponsorsC = () => {
 
         <hr className="relative z-10 border-2 border-dashed border-SecondaryColor" />
 
-        <div className={isMobile ? "carousel-track" : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-1"}>
-                    {sponsors.map((sponsor, index) => (
+        <div className={`relative ${isMobile ? "carousel-track animated" : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-1"}`}>
+         {sponsors.map((sponsor, index) => (
                         <SponsorCard
                             key={index}
                             sponsorUrl={sponsor.sponsorUrl}
                             sponsorLogo={sponsor.sponsorLogo}
                             sponsorDescription={sponsor.sponsorDescription}
                         />
-                    ))}
-                </div>
+          ))}
+        </div>
+
       </div>
     </div>
   );
