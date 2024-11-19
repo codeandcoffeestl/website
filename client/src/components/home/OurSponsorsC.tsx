@@ -16,10 +16,22 @@ export interface ISponsorCard {
 const OurSponsorsC = () => {
 
   const [sponsors, setSponsors] = useState<ISponsorCard[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setSponsors(sponsorsData);
   }, []);
+
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
   const scrollToContact = () => {
     const contactSection = document.getElementById("contact");
@@ -58,16 +70,16 @@ const OurSponsorsC = () => {
 
         <hr className="relative z-10 border-2 border-dashed border-SecondaryColor" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-1">
-          {sponsors.map((sponsor, index) => (
-            <SponsorCard
-              key={index}
-              sponsorUrl={sponsor.sponsorUrl}
-              sponsorLogo={sponsor.sponsorLogo}
-              sponsorDescription={sponsor.sponsorDescription}
-            />
-          ))}
-        </div>
+        <div className={isMobile ? "carousel-track" : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-1"}>
+                    {sponsors.map((sponsor, index) => (
+                        <SponsorCard
+                            key={index}
+                            sponsorUrl={sponsor.sponsorUrl}
+                            sponsorLogo={sponsor.sponsorLogo}
+                            sponsorDescription={sponsor.sponsorDescription}
+                        />
+                    ))}
+                </div>
       </div>
     </div>
   );
