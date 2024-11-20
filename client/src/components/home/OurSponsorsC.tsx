@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHandshake } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "primereact/button";
 import sponsorsData from './sponsorComponents/sponsors.json';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import backgroundImage from '../../assets/CoffeeBg.jpg';
 
 export interface ISponsorCard {
@@ -17,21 +17,29 @@ const OurSponsorsC = () => {
 
   const [sponsors, setSponsors] = useState<ISponsorCard[]>([]);
   const [isMobile, setIsMobile] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setSponsors(sponsorsData);
+    if (isMobile) {
+      const cardsNeeded = Math.ceil(window.innerWidth / 250) + 10;
+      const duplicatedCards = Array(cardsNeeded)
+        .fill(sponsorsData)
+        .flat();
+      setSponsors(duplicatedCards);
+    } else {
+      setSponsors(sponsorsData);
+    }
+  }, [isMobile]);
+  
+  useEffect(() => {
+      const handleResize = () => {
+          setIsMobile(window.innerWidth <= 768);
+      };
+
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
 
   const scrollToContact = () => {
     const contactSection = document.getElementById("contact");
@@ -72,7 +80,7 @@ const OurSponsorsC = () => {
 
         <hr className="relative z-10 border-2 border-dashed border-SecondaryColor" />
 
-        <div className={`relative ${isMobile ? "carousel-track animated" : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-1"}`}>
+        <div ref={trackRef} className={`relative ${isMobile ? "carousel-track animated" : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-1"}`}>
          {sponsors.map((sponsor, index) => (
                         <SponsorCard
                             key={index}

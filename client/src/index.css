@@ -167,8 +167,7 @@ button:focus-visible {
 .carousel-track {
   display: flex;
   width: 100%;
-  --gap: 20px;
-  gap: var(--gap);
+  gap: 20px;
   padding-block: 2rem;
   overflow: hidden;
   justify-content: center;
@@ -183,9 +182,9 @@ button:focus-visible {
   width: 250px;
   height: auto; 
   border-radius: 5px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
-  margin: 0 auto;
-  animation: slideRight 35s linear infinite;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+  margin: 0;
+  animation: scrollLeft 35s linear infinite;
 }
 
 .small-screen img {
@@ -195,7 +194,6 @@ button:focus-visible {
 .small-screen h4 {
   line-height: 1.4;
 }
-
 
 @media (max-width: 768px) {
   .carousel-container {
@@ -207,20 +205,11 @@ button:focus-visible {
   }
 }
 
-
-@keyframes slideRight {
-  /* 0% {
-    transform: translateX(calc(-300% - 20px));
-  }
-  100% {
-    transform: translateX(calc(350% - 20px));
-  } */
-
+@keyframes scrollLeft {
   0% {
     transform: translateX(calc(350% - 20px));
   }
   100% {
-    transform: translateX(calc(-300% - 20px));
+    transform: translateX(calc(-515% - 20px));
   }
-
 }
