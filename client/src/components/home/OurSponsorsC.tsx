@@ -10,12 +10,12 @@ export interface ISponsorCard {
   sponsorUrl: string
   sponsorLogo: string
   sponsorDescription: string
-
 }
 
 const OurSponsorsC = () => {
 
   const [sponsors, setSponsors] = useState<ISponsorCard[]>([]);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -31,6 +31,17 @@ const OurSponsorsC = () => {
     }
   }, [isMobile]);
   
+  const togglePlayState = () => {
+    setIsPlaying((prev) => !prev);
+    const elements = document.querySelectorAll(".small-screen");
+    elements.forEach((element) => {
+      const htmlElement = element as HTMLElement;
+      if (htmlElement) {
+        htmlElement.style.animationPlayState = isPlaying ? "paused" : "running";
+      }
+    });
+  };
+
   useEffect(() => {
       const handleResize = () => {
           setIsMobile(window.innerWidth <= 768);
@@ -91,6 +102,16 @@ const OurSponsorsC = () => {
           ))}
         </div>
 
+        {isMobile && (
+            <div className="control-buttons">
+              <Button
+                label={isPlaying ? "⏸ Pause Here" : "▶ Keep Exploring"}
+                onClick={togglePlayState}
+                className="p-button-rounded p-button-primary"
+              />
+            </div>
+        )} 
+           
       </div>
     </div>
   );

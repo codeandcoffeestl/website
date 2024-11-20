@@ -174,7 +174,6 @@ button:focus-visible {
   margin: 0 auto;
   left: 0;
   right:0;
-  /* background-color: #2ba6b9; */
 }
 
 .small-screen {
@@ -184,7 +183,22 @@ button:focus-visible {
   border-radius: 5px; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
   margin: 0;
+  margin-bottom: 5px;
   animation: scrollLeft 35s linear infinite;
+  animation-play-state: running;
+}
+
+.small-screen.paused {
+  animation-play-state: paused;
+}
+
+.control-buttons {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
 }
 
 .small-screen img {
