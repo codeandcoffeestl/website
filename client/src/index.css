@@ -194,11 +194,15 @@ button:focus-visible {
 
 .control-buttons {
   position: absolute;
-  bottom: 25px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
+}
+
+.control-buttons button {
+  background-color: #ffa6008c;
 }
 
 .small-screen img {
@@ -210,8 +214,8 @@ button:focus-visible {
 }
 
 @media (max-width: 768px) {
-  .carousel-container {
-    padding: 3rem 0; 
+  .slide-container {
+    padding: 1.5rem 0; 
   }
 
   .container {
@@ -225,5 +229,36 @@ button:focus-visible {
   }
   100% {
     transform: translateX(calc(-515% - 20px));
+  }
+}
+
+.star {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #17a2b8;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  animation: pulse 1.5s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
   }
 }

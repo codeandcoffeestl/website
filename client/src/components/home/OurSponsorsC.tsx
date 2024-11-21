@@ -17,6 +17,9 @@ const OurSponsorsC = () => {
   const [sponsors, setSponsors] = useState<ISponsorCard[]>([]);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const [showStars, setShowStars] = useState(false);
+  // const starTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,6 +36,22 @@ const OurSponsorsC = () => {
   
   const togglePlayState = () => {
     setIsPlaying((prev) => !prev);
+
+    if (isPlaying) {
+      setShowStars(true);
+      // if (starTimeoutRef.current) {
+      //   clearTimeout(starTimeoutRef.current);
+      // }
+      // starTimeoutRef.current = setTimeout(() => {
+      //   setShowStars(false);
+      // }, 2000);
+    } else {
+      setShowStars(false);
+      // if (starTimeoutRef.current) {
+      //   clearTimeout(starTimeoutRef.current);
+      // }
+    }
+
     const elements = document.querySelectorAll(".small-screen");
     elements.forEach((element) => {
       const htmlElement = element as HTMLElement;
@@ -60,7 +79,7 @@ const OurSponsorsC = () => {
   };
  
   return (
-    <div className="card relative carousel-container bg-contain bg-center h-auto min-h-screen"
+    <div className="card relative slide-container bg-contain bg-center h-auto min-h-screen"
       style={{
       backgroundImage: `url(${backgroundImage})`,
       }}
@@ -92,7 +111,7 @@ const OurSponsorsC = () => {
         <hr className="relative z-10 border-2 border-dashed border-SecondaryColor" />
 
         <div ref={trackRef} className={`relative ${isMobile ? "carousel-track animated" : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-1"}`}>
-         {sponsors.map((sponsor, index) => (
+        {sponsors.map((sponsor, index) => (
                         <SponsorCard
                             key={index}
                             sponsorUrl={sponsor.sponsorUrl}
@@ -103,17 +122,26 @@ const OurSponsorsC = () => {
         </div>
 
         {isMobile && (
-            <div className="control-buttons">
+            <div className="control-buttons" style={{ position: "relative" }}>
               <Button
                 label={isPlaying ? "⏸ Pause Here" : "▶ Keep Exploring"}
                 onClick={togglePlayState}
                 className="p-button-rounded p-button-primary"
               />
-            </div>
+            {showStars && (
+              <div style={{ position: "relative", marginTop: "20px" }}>
+                  <div className="star" style={{ top: "-2rem", left: "-2rem" }}></div>
+                  <div className="star" style={{ top: "0rem", right: "-2rem" }}></div>
+                  <div className="star" style={{ bottom: "-1rem", left: "-9rem" }}></div>
+                  <div className="star" style={{ top: "-1rem", left: "-12.5rem" }}></div>
+                </div>
+              )}
+        </div>
         )} 
-           
+
       </div>
     </div>
   );
 }
+
 export default OurSponsorsC
