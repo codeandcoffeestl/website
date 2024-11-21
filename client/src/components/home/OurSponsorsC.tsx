@@ -17,8 +17,7 @@ const OurSponsorsC = () => {
   const [sponsors, setSponsors] = useState<ISponsorCard[]>([]);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-  const [showStars, setShowStars] = useState(false);
-  // const starTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [showStars] = useState(false);
 
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -36,22 +35,11 @@ const OurSponsorsC = () => {
   
   const togglePlayState = () => {
     setIsPlaying((prev) => !prev);
-
+  
     if (isPlaying) {
-      setShowStars(true);
-      // if (starTimeoutRef.current) {
-      //   clearTimeout(starTimeoutRef.current);
-      // }
-      // starTimeoutRef.current = setTimeout(() => {
-      //   setShowStars(false);
-      // }, 2000);
-    } else {
-      setShowStars(false);
-      // if (starTimeoutRef.current) {
-      //   clearTimeout(starTimeoutRef.current);
-      // }
+      createStars();
     }
-
+  
     const elements = document.querySelectorAll(".small-screen");
     elements.forEach((element) => {
       const htmlElement = element as HTMLElement;
@@ -59,6 +47,27 @@ const OurSponsorsC = () => {
         htmlElement.style.animationPlayState = isPlaying ? "paused" : "running";
       }
     });
+  };
+  
+  const createStars = () => {
+    const container = document.querySelector(".control-buttons"); 
+    if (!container) return;
+  
+    for (let i = 0; i < 5; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+  
+      const tx = (Math.random() - 0.5) * 100;
+      const ty = (Math.random() - 0.5) * 100;
+      star.style.setProperty("--tx", `${tx}px`);
+      star.style.setProperty("--ty", `${ty}px`);
+  
+      container.appendChild(star);
+  
+      star.addEventListener("animationend", () => {
+        star.remove();
+      });
+    }
   };
 
   useEffect(() => {
@@ -123,22 +132,22 @@ const OurSponsorsC = () => {
 
         {isMobile && (
             <div className="control-buttons" style={{ position: "relative" }}>
-              <Button
-                label={isPlaying ? "⏸ Pause Here" : "▶ Keep Exploring"}
-                onClick={togglePlayState}
-                className="p-button-rounded p-button-primary"
-              />
-            {showStars && (
-              <div style={{ position: "relative", marginTop: "20px" }}>
-                  <div className="star" style={{ top: "-2rem", left: "-2rem" }}></div>
-                  <div className="star" style={{ top: "0rem", right: "-2rem" }}></div>
-                  <div className="star" style={{ bottom: "-1rem", left: "-9rem" }}></div>
-                  <div className="star" style={{ top: "-1rem", left: "-12.5rem" }}></div>
-                </div>
-              )}
-        </div>
+              <div className="star-button-wrapper">
+                {showStars && (
+                    <div>
+                      <div className="star"></div>
+                      <div className="star"></div>
+                      <div className="star"></div>
+                      <div className="star"></div>
+                    </div>
+                  )}
+              </div>
+                  <Button
+                  label={isPlaying ? "⏸ Pause Here" : "▶ Keep Exploring"}
+                  onClick={togglePlayState}
+                />
+          </div>
         )} 
-
       </div>
     </div>
   );

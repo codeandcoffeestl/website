@@ -191,7 +191,7 @@ button:focus-visible {
   width: 100%;
   gap: 20px;
   padding-block: 2rem;
-  overflow: hidden;
+  overflow: scroll;
   justify-content: center;
   margin: 0 auto;
   left: 0;
@@ -254,10 +254,14 @@ button:focus-visible {
   }
 }
 
+.star-button-wrapper {
+  position: absolute; 
+}
+
 .star {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   background-color: #17a2b8;
   clip-path: polygon(
     50% 0%,
@@ -271,16 +275,23 @@ button:focus-visible {
     2% 35%,
     39% 35%
   );
-  animation: pulse 1.5s infinite ease-in-out;
+  animation: star-fly 2.5s ease-out forwards;
   pointer-events: none;
+  opacity: 0;
   z-index: 1000;
+  left: 60%;
+  top: 5%;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
+@keyframes star-fly {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
   }
-  50% {
-    transform: scale(1.5);
+
+  100% {
+    transform: scale(2.5) translate(var(--tx), var(--ty));
+    opacity: 0;
   }
 }
