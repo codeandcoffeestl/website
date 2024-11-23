@@ -143,7 +143,7 @@ button:focus-visible {
 }
 
 .box {
-  background: linear-gradient(-5deg, #17A2B8, #e5fcff, #aaf4ff);
+  background: linear-gradient(-7deg, #17a2b8, #e5fcff 36.97%, #baf6ff 40.34%);
 }
 
 .scroll-up-button button {
@@ -161,4 +161,137 @@ button:focus-visible {
 
 .scroll-up-button button:hover {
   background-color: #FFA500;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.sponsor-card {
+  position: relative;
+  opacity: 0;
+  transform: translateY(100px); 
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.sponsor-card.fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  padding-block: 2rem;
+  overflow: scroll;
+  justify-content: center;
+  margin: 0 auto;
+  left: 0;
+  right:0;
+}
+
+.small-screen {
+  flex-shrink: 0;
+  width: 250px;
+  height: auto; 
+  border-radius: 5px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+  margin: 0;
+  margin-bottom: 5px;
+  animation: scrollLeft 35s linear infinite;
+  animation-play-state: running;
+}
+
+.small-screen.paused {
+  animation-play-state: paused;
+}
+
+.control-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.control-buttons button {
+  background-color: #ffa6008c;
+}
+
+.small-screen img {
+  width: 90%;
+}
+
+.small-screen h4 {
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .slide-container {
+    padding: 1.5rem 0; 
+  }
+
+  .container {
+    max-width: none;
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(calc(350% - 20px));
+  }
+  100% {
+    transform: translateX(calc(-515% - 20px));
+  }
+}
+
+.star-button-wrapper {
+  position: absolute; 
+}
+
+.star {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #17a2b8;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  animation: star-fly 2.5s ease-out forwards;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1000;
+  left: 60%;
+  top: 5%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes star-fly {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2.5) translate(var(--tx), var(--ty));
+    opacity: 0;
+  }
 }
