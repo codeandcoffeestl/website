@@ -15,6 +15,7 @@ const NavBar = () => {
                        float-right
                        w-screen
                        px-4 py-2
+                       sm:px-0
                        lg:w-auto md:w-36
                        ">
             <span className="mx-2">{item.label}</span>
@@ -91,11 +92,11 @@ const NavBar = () => {
             <div className="order-3
                             flex
                             items-center
-                            mx-4">
+                            sm=p-0>">
                 <Menubar
                     className="bg-SecondaryColor
-                            text-white
-                            text-center"
+                                text-white
+                                text-center"
                     model={items}
                 />
             </div>
