@@ -41,7 +41,7 @@ const ScrollToTopButton = () => {
         bottom: "20px",
         right: "20px",
         transition: "opacity 0.5s ease, visibility 0.5s ease",
-        zIndex: 10,
+        zIndex: 100,
       }}
     >
       <button>

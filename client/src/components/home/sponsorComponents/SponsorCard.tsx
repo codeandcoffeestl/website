@@ -1,5 +1,5 @@
 import { Card } from "primereact/card";
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, useEffect, useRef, useState } from "react";
 
 interface SponsorCardProps {
     sponsorUrl: string | undefined;
@@ -8,8 +8,67 @@ interface SponsorCardProps {
 }
 
 export const SponsorCard = ({ sponsorUrl, sponsorLogo, sponsorDescription }: SponsorCardProps) => {
+    const cardRef = useRef<HTMLDivElement>(null); 
+    const [isVisible, setIsVisible] = useState(false);
+    const [isMobile, setIsSmallScreen] = useState(false);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsSmallScreen(window.innerWidth <= 768);
+      };
+  
+      handleResize();
+      window.addEventListener("resize", handleResize);
+  
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.3 }
+        );
+
+        if (cardRef.current) {
+            observer.observe(cardRef.current);
+        }
+
+        return () => {
+            if (cardRef.current) {
+                observer.unobserve(cardRef.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const element = cardRef.current;
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    element.classList.add("fade-in-up");
+                }
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll); 
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+    
     return (
-        <div className="flex justify-content-center p-0 m-4 font-sans">
+        <div
+            ref={cardRef}
+            className={`flex justify-content-center p-0 m-4 font-sans sponsor-card
+                ${isVisible ? "fade-in-up" : ""} 
+                ${isMobile ? "small-screen" : ""}
+            `}
+        >
             <Card className="z-10 bg-PrimaryColor shadow-lg p-0 font-sans">
                 <a href={sponsorUrl} 
                    target="_blank" 
@@ -19,7 +78,6 @@ export const SponsorCard = ({ sponsorUrl, sponsorLogo, sponsorDescription }: Spo
                         src={"/sponsor-logos/" + sponsorLogo} 
                         alt={sponsorLogo}  
                         style={{
-                            // boxShadow: '0 0 30px rgba(255, 255, 255, 0.3)',
                             borderRadius: '5px'
                         }}/>
                 </a>
@@ -28,5 +86,7 @@ export const SponsorCard = ({ sponsorUrl, sponsorLogo, sponsorDescription }: Spo
                 </h4>
             </Card>
         </div>
+
+        
     );
 }

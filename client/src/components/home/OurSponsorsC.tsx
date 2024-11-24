@@ -3,22 +3,81 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHandshake } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "primereact/button";
 import sponsorsData from './sponsorComponents/sponsors.json';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import backgroundImage from '../../assets/CoffeeBg.jpg';
 
 export interface ISponsorCard {
   sponsorUrl: string
   sponsorLogo: string
   sponsorDescription: string
-
 }
 
 const OurSponsorsC = () => {
 
   const [sponsors, setSponsors] = useState<ISponsorCard[]>([]);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+  const [showStars] = useState(false);
+
+  const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setSponsors(sponsorsData);
+    if (isMobile) {
+      const cardsNeeded = Math.ceil(window.innerWidth / 250) + 10;
+      const duplicatedCards = Array(cardsNeeded)
+        .fill(sponsorsData)
+        .flat();
+      setSponsors(duplicatedCards);
+    } else {
+      setSponsors(sponsorsData);
+    }
+  }, [isMobile]);
+  
+  const togglePlayState = () => {
+    setIsPlaying((prev) => !prev);
+  
+    if (isPlaying) {
+      createStars();
+    }
+  
+    const elements = document.querySelectorAll(".small-screen");
+    elements.forEach((element) => {
+      const htmlElement = element as HTMLElement;
+      if (htmlElement) {
+        htmlElement.style.animationPlayState = isPlaying ? "paused" : "running";
+      }
+    });
+  };
+  
+  const createStars = () => {
+    const container = document.querySelector(".control-buttons"); 
+    if (!container) return;
+  
+    for (let i = 0; i < 5; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+  
+      const tx = (Math.random() - 0.5) * 100;
+      const ty = (Math.random() - 0.5) * 100;
+      star.style.setProperty("--tx", `${tx}px`);
+      star.style.setProperty("--ty", `${ty}px`);
+  
+      container.appendChild(star);
+  
+      star.addEventListener("animationend", () => {
+        star.remove();
+      });
+    }
+  };
+
+  useEffect(() => {
+      const handleResize = () => {
+          setIsMobile(window.innerWidth <= 768);
+      };
+
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const scrollToContact = () => {
@@ -29,9 +88,11 @@ const OurSponsorsC = () => {
   };
  
   return (
-    <div className="card relative bg-contain bg-center h-auto min-h-screen" style={{
+    <div className="card relative slide-container bg-contain bg-center h-auto min-h-screen"
+      style={{
       backgroundImage: `url(${backgroundImage})`,
-  }}>
+      }}
+    >
       <div className="absolute inset-0 bg-gray-200 bg-opacity-80 z-0"></div>
 
       <div className="container mx-auto md:px-8 lg:px-12 md:pt-10 lg:pt-16 lg:pb-10">
@@ -58,18 +119,38 @@ const OurSponsorsC = () => {
 
         <hr className="relative z-10 border-2 border-dashed border-SecondaryColor" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-1">
-          {sponsors.map((sponsor, index) => (
-            <SponsorCard
-              key={index}
-              sponsorUrl={sponsor.sponsorUrl}
-              sponsorLogo={sponsor.sponsorLogo}
-              sponsorDescription={sponsor.sponsorDescription}
-            />
+        <div ref={trackRef} className={`relative ${isMobile ? "carousel-track animated" : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-1"}`}>
+        {sponsors.map((sponsor, index) => (
+                        <SponsorCard
+                            key={index}
+                            sponsorUrl={sponsor.sponsorUrl}
+                            sponsorLogo={sponsor.sponsorLogo}
+                            sponsorDescription={sponsor.sponsorDescription}
+                        />
           ))}
         </div>
+
+        {isMobile && (
+            <div className="control-buttons" style={{ position: "relative" }}>
+              <div className="star-button-wrapper">
+                {showStars && (
+                    <div>
+                      <div className="star"></div>
+                      <div className="star"></div>
+                      <div className="star"></div>
+                      <div className="star"></div>
+                    </div>
+                  )}
+              </div>
+                  <Button
+                  label={isPlaying ? "⏸ Pause Here" : "▶ Keep Exploring"}
+                  onClick={togglePlayState}
+                />
+          </div>
+        )} 
       </div>
     </div>
   );
 }
+
 export default OurSponsorsC
