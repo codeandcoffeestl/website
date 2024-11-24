@@ -3,7 +3,7 @@ import './assets/custom-theme/tailwind-custom/theme.scss';
 import { Routes, Route } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
-import ScrollToTopButton from "./components/ScrollToTopButton";
+import ScrollToTopButton from "./components/utilComponents/ScrollToTopButton.tsx";
 
 function App() {
 
