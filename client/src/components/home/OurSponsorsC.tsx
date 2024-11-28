@@ -142,10 +142,16 @@ const OurSponsorsC = () => {
                     </div>
                   )}
               </div>
-                  <Button
-                  label={isPlaying ? "⏸ Pause Here" : "▶ Keep Exploring"}
-                  onClick={togglePlayState}
+              <Button
+                onClick={togglePlayState}
+              >
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: isPlaying ? "&#x23F8; Pause Here" : "&#9658; Keep Exploring",
+                  }}
                 />
+              </Button>
+
           </div>
         )} 
       </div>
