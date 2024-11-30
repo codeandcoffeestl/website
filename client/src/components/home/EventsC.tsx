@@ -11,7 +11,7 @@ const EventsC = () => {
 
     useEffect(() => {
         try {
-            const returnedData = fetch(" https://m2l5iuxis4pw3fegfg62vkgcfq0umloq.lambda-url.us-east-1.on.aws/api/event")
+            const returnedData = fetch("https://fx2u44onf44n73hfjpvff5uweu0oeiqx.lambda-url.us-east-1.on.aws/api/event")
             returnedData.then(async r => setData(await r.json()))
         } catch (e) {
             console.log(e)
@@ -55,7 +55,7 @@ const EventsC = () => {
                     <h3 className="z-10 flex items-center text-black text-[36px] leading-tight font-black mb-4 md:mb-0">
                         Upcoming Events
                     </h3>
-                    <Button className="bg-OHighlightColor text-PrimaryColor font-semibold text-xl"
+                    <Button
                         label="All Events"
                         link
                         onClick={() => window.open("https://www.meetup.com/code-and-coffee-st-louis/", '_blank')} />
@@ -80,7 +80,6 @@ const EventsC = () => {
                                 link
                                 raised
                                 size="small"
-                                className=" bg-OHighlightColor text-PrimaryColor "
                                 onClick={() => window.open(event.eventUrl, '_blank')} />
                         </Card>
                     ))}

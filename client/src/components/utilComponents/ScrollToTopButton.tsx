@@ -22,7 +22,6 @@ const ScrollToTopButton = () => {
         const scrollPosition = window.scrollY + window.innerHeight;
         const footerTop = footerSection.getBoundingClientRect().top + window.scrollY;
 
-        // イベントセクションを過ぎ、フッターに到達する前にボタンを表示
         setIsVisible(scrollPosition > eventSectionTop && scrollPosition < footerTop);
       }
     };

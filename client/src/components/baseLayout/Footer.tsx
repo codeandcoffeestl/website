@@ -10,7 +10,8 @@ import {
 const Footer = () => {
 
     const itemRenderer = (item: MenuItem) => (
-        <a className="flex p-menuitem-link text-WAccentColor">
+        <a className="flex p-menuitem-link text-WAccentColor"
+        >
             <span className="mx-5">{item.label}</span>
         </a>
     );
@@ -36,8 +37,7 @@ const Footer = () => {
         {
             id: "Foot2",
             label: 'Events',
-            command: handleClick('events')
-            ,
+            command: handleClick('events'),
             template: itemRenderer,
         },
         {

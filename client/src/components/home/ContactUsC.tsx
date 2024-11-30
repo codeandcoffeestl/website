@@ -12,10 +12,13 @@ export default function ContactUsC() {
         }}>
             <div className="flex justify-center">
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScsnMtCqoNHPxJy0v0y3Yw9OtWjiLwMXSKTRQVaUxBBS_g94Q/viewform?embedded=true"
-                    width="740"
-                    height="776"
-                    className='opacity-90'
-
+                        width="720"
+                        height="850"
+                        className="opacity-90
+                                    h-[1020px]
+                                    sm:h-[830px]
+                                    md:h-[830px]
+                                    lg:h-[830px]"
                 >Loading…</iframe>
             </div>
         </div >
