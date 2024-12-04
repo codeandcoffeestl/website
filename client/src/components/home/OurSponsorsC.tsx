@@ -142,16 +142,26 @@ const OurSponsorsC = () => {
                     </div>
                   )}
               </div>
-              <Button
-                onClick={togglePlayState}
-              >
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: isPlaying ? "&#x23F8; Pause Here" : "&#9658; Keep Exploring",
-                  }}
-                />
-              </Button>
-
+              <Button onClick={togglePlayState}>
+  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+    {isPlaying ? (
+      <>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <rect x="6" y="4" width="4" height="16" />
+          <rect x="14" y="4" width="4" height="16" />
+        </svg>
+        <span>Pause Here</span>
+      </>
+    ) : (
+      <>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="6,4 20,12 6,20" />
+        </svg>
+        <span>Keep Exploring</span>
+      </>
+    )}
+  </div>
+</Button>
           </div>
         )} 
       </div>
